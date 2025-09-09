@@ -4,13 +4,12 @@
 
 package com.mycompany.gestorreportemascotas;
 
-
-
 /**
  *
  * @author Jimena
  */
 public class GestorReporteMascotas {
+    
 public static void main(String[] args) {
     Menu menu= new Menu ();
         int option;
