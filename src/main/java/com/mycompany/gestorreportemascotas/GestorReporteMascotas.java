@@ -51,9 +51,7 @@ public class GestorReporteMascotas {
                     break;
                     
                 }
-                    
-             
-                    
+                       
                 case 2:{
                     System.out.println("2");
                 }

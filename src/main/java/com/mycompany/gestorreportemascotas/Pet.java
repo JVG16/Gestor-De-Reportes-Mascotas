@@ -43,14 +43,37 @@ public class Pet {
          do{
        System.out.println("Ingrese ID de reporte (ejemplo REP-0001):");
        this.IdentificationReport = sc.nextLine().trim().toUpperCase();
+       
+       boolean One = true;
+       
+       if (IdentificationReport.length()!=8){
+           System.out.println ("La cantidad esperada de carácteres en total es de 8. Por favor, vuelva a intentarlo");
+           One = false; 
+       }
+           
    }while (this.IdentificationReport== null);              
 }
+     
      
     public void IdentReporter(){
          Scanner sc = new Scanner (System.in);
          do{
        System.out.println("Ingrese ID del reportante (1-1111-1111):");
        this.IdentificationReporter= sc.nextLine().trim().toUpperCase();
+       
+       boolean Two = true;
+       if (IdentificationReporter.length()!=8){
+           System.out.println ("La cantidad esperada de carácteres en total es de 8. Por favor, vuelva a intentarlo");
+           Two = false; 
+       }
+       
+       if(IdentificationReporter.charAt(1)!='-'|| IdentificationReporter.charAt(6)!= '-'){
+           System.out.println("El formato es incorrecto, por favor vuelva a intentarlo");
+           Two= false;
+       }
+       
+       
+       
    }while (this.IdentificationReporter== null);  
      
    }  
