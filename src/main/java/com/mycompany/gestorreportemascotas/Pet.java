@@ -184,7 +184,15 @@ public class Pet {
          do{
        System.out.println("Ingrese teléfono de contacto (####-####):");
        this.TelephoneNumber = sc.nextLine().trim().toUpperCase();
+       if(TelephoneNumber.charAt(4)!='-'){
+          System.out.println("IEl formato del teléfono de contacto es incorrecto"); 
+          Nine = false;
+       }
        
+       if (TelephoneNumber.length()!=9){
+           System.out.println ("La cantidad esperada de carácteres en total es de 9. Por favor, vuelva a intentarlo");
+           Nine = false; 
+       }
    }while (!Nine);  
      
    }
