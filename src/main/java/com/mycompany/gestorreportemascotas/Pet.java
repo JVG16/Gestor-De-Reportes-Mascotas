@@ -60,6 +60,7 @@ public class Pet {
     public void IdentReporter(){
          Scanner sc = new Scanner (System.in);
          boolean Two = true;
+         
          do{
        System.out.println("Ingrese ID del reportante (1-1111-1111):");
        this.IdentificationReporter= sc.nextLine().trim().toUpperCase();
@@ -92,6 +93,7 @@ public class Pet {
        }
        else{
           System.out.println("El nombre debe contener como mínimo 7 carácteres"); 
+          Three = false;
        } 
                       
    }while (!Three);  
@@ -116,14 +118,16 @@ public class Pet {
          do{
        System.out.println("Ingrese la zona:");
        this.Zone = sc.nextLine().trim().toUpperCase();
-       if (Zone.length()>= 30){
+       if (Zone.length()<= 30){
            Five = true;
        }
        else{
            System.out.println("El texto debe contener como máximo 30 carácteres");
+           Five = false;
        }
        
    }while (!Five);  
+         
      
    } 
      
@@ -139,6 +143,7 @@ public class Pet {
        }
        else{
            System.out.println("Ingrese una de las dos opciones mencionadas anteriormente");
+           Six = false;
        }
    }while (!Six);  
      
@@ -156,6 +161,7 @@ public class Pet {
     public void Signs (){
          Scanner sc = new Scanner (System.in);
          boolean Eighth = true;
+         
          do{
        System.out.println("Ingrese señas particulares (mínimo 10 carácteres):");
        this.ParticularSigns = sc.nextLine().trim().toUpperCase();
@@ -164,6 +170,7 @@ public class Pet {
        }
        else{
           System.out.println("Debe tener mínimo 10 carácteres"); 
+          Eighth = false;
        } 
        
    }while (!Eighth);  
@@ -181,6 +188,18 @@ public class Pet {
    }while (!Nine);  
      
    }
+    
+    public String Archive (){
+        return " ID Reporte:" + IdentificationReport + 
+               " ID reportante:" + IdentificationReporter+
+               " Tipo de Reporte:"+ TypeReport+
+               " Zona:" + Zone+
+                " Especie:"+ Species+
+                " Color:" + Color +
+                " Señales Particulares:" + ParticularSigns +
+                " Teléfono:" + TelephoneNumber;
+                
+    }
      
      }
 

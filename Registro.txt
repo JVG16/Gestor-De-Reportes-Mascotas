@@ -1,0 +1,2 @@
+ ID Reporte:12345567 ID reportante:1-1029-9456 Tipo de Reporte:PDR Zona:SAN JOSÉ Especie:CD Color:MARRÓN Señales Particulares:TIENE COLOR AMARILLO Teléfono:8812-2121
+ ID Reporte:12345678 ID reportante:1-1234-1234 Tipo de Reporte:PDR Zona:SANTA ANA Especie:DOG Color:MARRÓN Señales Particulares:TIENE 3 MANCHAS CAFÉS Teléfono:8888-8888

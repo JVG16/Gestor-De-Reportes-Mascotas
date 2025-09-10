@@ -3,13 +3,17 @@
  */
 package com.mycompany.gestorreportemascotas;
 
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+
 /**
  *
  * @author Jimena
  */
 public class GestorReporteMascotas {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         Menu menu = new Menu();
         int option;
 
@@ -18,38 +22,34 @@ public class GestorReporteMascotas {
             option = menu.leerOption();
 
             switch (option) {
+                
                 case 1:{
                     
                     Pet AA = new Pet ();
                     AA.IdentReport ();
+                    AA.IdentReporter ();
+                    AA.Name ();
+                    AA.Report();
+                    AA.Place ();
+                    AA.Animal ();
+                    AA.Aspect ();
+                    AA.Signs ();
+                    AA.Phone ();
                     
-                    Pet BB = new Pet ();
-                    BB.IdentReporter ();
-                    
-                    Pet CC = new Pet ();
-                    CC.Name ();
-                    
-                    Pet DD = new Pet ();
-                    DD.Report ();
-                    
-                    Pet EE = new Pet ();
-                    EE.Place ();
-                    
-                     Pet FF = new Pet ();
-                    FF.Animal ();
-                    
-                     Pet GG = new Pet ();
-                    GG.Aspect ();
-                    
-                    Pet HH = new Pet ();
-                    HH.Signs ();
-                    
-                    Pet II = new Pet ();
-                    II.Phone ();
-                    
+                    try{
+                        
+                        FileWriter archivo = new FileWriter ("Registro.txt", true);
+                        PrintWriter escribir = new PrintWriter (archivo);
+                        
+                        escribir.println(AA.Archive());
+                       escribir.close();
+                       archivo.close();
+                        
+                    }catch (IOException e){
+                        System.out.println ("No se guardó el registro correctamente" + e.getMessage());
+                    }
                     
                     break;
-                    
                 }
                       
                 case 2:{
