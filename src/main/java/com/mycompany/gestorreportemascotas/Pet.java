@@ -111,41 +111,52 @@ public class Pet {
      
    } 
      
-    public void Place(){
+    public void Date(){
          Scanner sc = new Scanner (System.in);
          boolean Five = true;
+         
+         do{
+       System.out.println("Ingrese la fecha del reporte:");
+       this.ReportDate = sc.nextLine().trim().toUpperCase();
+       
+   }while (!Five);
+         }
+    
+    public void Place(){
+         Scanner sc = new Scanner (System.in);
+         boolean Six = true;
          
          do{
        System.out.println("Ingrese la zona:");
        this.Zone = sc.nextLine().trim().toUpperCase();
        if (Zone.length()<= 30){
-           Five = true;
+           Six = true;
        }
        else{
            System.out.println("El texto debe contener como máximo 30 carácteres");
-           Five = false;
+           Six = false;
        }
        
-   }while (!Five);  
+   }while (!Six);  
          
      
    } 
      
     public void Animal (){
          Scanner sc = new Scanner (System.in);
-         boolean Six = true;
+         boolean Seven = true;
          
          do{
        System.out.println("Ingrese especie (DOG/CAT):");
        this.Species= sc.nextLine().trim().toUpperCase();
        if (Species.equals("DOG")||Species.equals("CAT")){
-           Six = true;
+           Seven = true;
        }
        else{
            System.out.println("Ingrese una de las dos opciones mencionadas anteriormente");
-           Six = false;
+           Seven = false;
        }
-   }while (!Six);  
+   }while (!Seven);  
      
    }
     
@@ -160,40 +171,36 @@ public class Pet {
     
     public void Signs (){
          Scanner sc = new Scanner (System.in);
-         boolean Eighth = true;
+         boolean Nine = true;
          
          do{
        System.out.println("Ingrese señas particulares (mínimo 10 carácteres):");
        this.ParticularSigns = sc.nextLine().trim().toUpperCase();
        if (ParticularSigns.length()>=10){
-           Eighth = true;
+           Nine = true;
        }
        else{
           System.out.println("Debe tener mínimo 10 carácteres"); 
-          Eighth = false;
+          Nine = false;
        } 
        
-   }while (!Eighth);  
+   }while (!Nine);  
      
    }
     
     public void Phone (){
          Scanner sc = new Scanner (System.in);
-         boolean Nine = true;
+         boolean Ten = true;
          
          do{
        System.out.println("Ingrese teléfono de contacto (####-####):");
        this.TelephoneNumber = sc.nextLine().trim().toUpperCase();
        if(TelephoneNumber.charAt(4)!='-'){
-          System.out.println("IEl formato del teléfono de contacto es incorrecto"); 
-          Nine = false;
+          System.out.println("El formato del teléfono de contacto es incorrecto"); 
+          Ten = false;
        }
        
-       if (TelephoneNumber.length()!=9){
-           System.out.println ("La cantidad esperada de carácteres en total es de 9. Por favor, vuelva a intentarlo");
-           Nine = false; 
-       }
-   }while (!Nine);  
+   }while (!Ten);  
      
    }
     
@@ -209,5 +216,35 @@ public class Pet {
                 
     }
      
+    public String getIdentificationReport() {
+        return IdentificationReport;
+    }
+    public String getIdentificationReporter() {
+        return IdentificationReporter;
+    }
+    public String getFullName() {
+        return FullName;
+    }
+    public String getTypeTeport() {
+        return TypeReport;
+    }
+    public String getReportDate() {
+        return ReportDate;
+    }
+    public String getZone() {
+        return Zone;
+    }
+    public String getSpecies() {
+        return Species;
+    }
+    public String getColor() {
+        return Color;
+    }
+    public String getParticularSigns() {
+        return ParticularSigns;
+    }
+    public String getTelephoneNumber() {
+        return TelephoneNumber;
+    }
      }
 

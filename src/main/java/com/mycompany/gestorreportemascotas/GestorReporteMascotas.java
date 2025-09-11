@@ -6,6 +6,9 @@ package com.mycompany.gestorreportemascotas;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.List;
+
 
 /**
  *
@@ -16,6 +19,8 @@ public class GestorReporteMascotas {
     public static void main(String[] args) throws IOException {
         Menu menu = new Menu();
         int option;
+        
+List<Pet> pets = new ArrayList<>();
 
         do {
             menu.SeeMenu();
@@ -38,22 +43,24 @@ public class GestorReporteMascotas {
                     
                     try{
                         
-                        FileWriter archivo = new FileWriter ("Registro.txt", true);
-                        PrintWriter escribir = new PrintWriter (archivo);
+                        FileWriter archive = new FileWriter ("Registro.txt", true);
+                        PrintWriter write = new PrintWriter (archive);
                         
-                        escribir.println(AA.Archive());
-                       escribir.close();
-                       archivo.close();
+                       write.println(AA.Archive());
+                       write.close();
+                       write.close();
                         
                     }catch (IOException e){
                         System.out.println ("No se guardó el registro correctamente" + e.getMessage());
                     }
-                    
+                    pets.add(AA);
                     break;
+                    
                 }
                       
                 case 2:{
-                    System.out.println("2");
+                    Query.listOfQueries(pets);
+                    break;
                 }
                     
                 case 3:{
