@@ -7,13 +7,15 @@ package com.mycompany.gestorreportemascotas;
 import java.util.List;
 import java.util.Scanner;
 
+
 /**
  *
  * @author Jimena
  */
 public class Query {
-    public static void listOfQueries(List<Pet> pets){
-        Scanner sc = new Scanner (System.in);
+
+    public static void listOfQueries(List<Pet> pets) {
+        Scanner sc = new Scanner(System.in);
         System.out.println(" -------------------------------------------- ");
         System.out.println("     CONSULTA DE REPORTES POR CRITERIOS       ");
         System.out.println(" -------------------------------------------- ");
@@ -24,30 +26,30 @@ public class Query {
         System.out.println(" Digite un criterio de búsqueda");
         int Selection = sc.nextInt();
         sc.nextLine();
-        
+
         String Written = "";
-        
+
         String Word = "";
-        
-        if (Selection == 1){
-            System.out.println ("Digite el ID del reportante:");
+
+        if (Selection == 1) {
+            System.out.println("Digite el ID del reportante:");
             Word = sc.nextLine().trim().toUpperCase();
-        } else if (Selection == 2){
-            System.out.println ("Digie la especie (DOG/CAT:");
+        } else if (Selection == 2) {
+            System.out.println("Digie la especie (DOG/CAT:");
             Word = sc.nextLine().trim().toUpperCase();
-        }else if (Selection == 3){
-            System.out.println ("Digite la zona");
+        } else if (Selection == 3) {
+            System.out.println("Digite la zona");
             Word = sc.nextLine().trim().toUpperCase();
-        }else{
-            System.out.println ("Opción inválida");
+        } else {
+            System.out.println("Opción inválida");
             return;
         }
-       
-        System.out.println(" Resultados encontrados:"); 
+
+        System.out.println(" Resultados encontrados:");
         System.out.println(" ID Reportante       Nombre        Fecha          Zona          Tipo            ");
-         System.out.println(" -------------------------------------------------------------------------------");
-         
-         boolean found = false;
+        System.out.println(" -------------------------------------------------------------------------------");
+
+        boolean found = false;
         for (Pet p : pets) {
             boolean match = false;
 
@@ -58,18 +60,17 @@ public class Query {
             } else if (Selection == 3 && p.getZone().toUpperCase().equals(Word)) {
                 match = true;
             }
-            
-           if(match){
-               found = true;
-               System.out.printf ("    %s             -      %s            -      %s               -      %s              - %s   ",
-               p.getIdentificationReporter(), p.getFullName(),p.getReportDate(), p.getZone(), p.getTypeTeport());
-                  
-           }
-            
-         }
-        
+
+            if (match) {
+                found = true;
+                System.out.printf("    %s       -      %s       -      %s        -      %s              - %s   ",
+                        p.getIdentificationReporter(), p.getFullName(), p.getReportDate(), p.getZone(), p.getTypeTeport());
+                System.out.println("\n\n");
+
+            }
+
+        }
+
     }
-     
-} 
 
-
+}

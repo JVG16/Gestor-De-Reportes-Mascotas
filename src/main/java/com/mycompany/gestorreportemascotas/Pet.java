@@ -225,7 +225,7 @@ public class Pet {
     public String getFullName() {
         return FullName;
     }
-    public String getTypeTeport() {
+    public String getTypeReport() {
         return TypeReport;
     }
     public String getReportDate() {

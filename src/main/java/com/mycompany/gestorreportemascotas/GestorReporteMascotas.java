@@ -90,7 +90,8 @@ public class GestorReporteMascotas {
                 }
 
                 case 3: {
-                    System.out.println("3");
+                    GeneralReport.General(pets);
+                    break;
                 }
 
                 case 4: {
