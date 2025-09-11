@@ -26,30 +26,23 @@ public class Query {
         sc.nextLine();
         
         String Written = "";
-        switch (Selection){
-            
-            case 1: {
-                System.out.println(" 1. ID del reportante: ");
-                 Written = sc.nextLine(). trim ().toUpperCase();
-                 break;
-            }  
-            case 2:{
-                System.out.println(" 2. Especie: ");
-                Written = sc.nextLine(). trim ().toUpperCase();
-                break;
-            }
-            case 3:{
-                System.out.println(" 3. Zona: ");
-                Written = sc.nextLine(). trim ().toUpperCase();
-                break;
-            }
-            default: {
-                 System.out.println("  Ha seleccionado un valor fuera de los criterios de búsqueda ");
-                }
         
-    }
-       System.out.println(" Ingrese especie (DOG/CAT):");
-        Written = sc.nextLine(). trim ().toUpperCase();
+        String Word = "";
+        
+        if (Selection == 1){
+            System.out.println ("Digite el ID del reportante:");
+            Word = sc.nextLine().trim().toUpperCase();
+        } else if (Selection == 2){
+            System.out.println ("Digie la especie (DOG/CAT:");
+            Word = sc.nextLine().trim().toUpperCase();
+        }else if (Selection == 3){
+            System.out.println ("Digite la zona");
+            Word = sc.nextLine().trim().toUpperCase();
+        }else{
+            System.out.println ("Opción inválida");
+            return;
+        }
+       
         System.out.println(" Resultados encontrados:"); 
         System.out.println(" ID Reportante       Nombre        Fecha          Zona          Tipo            ");
          System.out.println(" -------------------------------------------------------------------------------");
@@ -58,17 +51,17 @@ public class Query {
         for (Pet p : pets) {
             boolean match = false;
 
-            if (Selection == 1 && p.getIdentificationReporter().toUpperCase().equals(Written)) {
+            if (Selection == 1 && p.getIdentificationReporter().toUpperCase().equals(Word)) {
                 match = true;
-            } else if (Selection == 2 && p.getSpecies().toUpperCase().equals(Written)) {
+            } else if (Selection == 2 && p.getSpecies().toUpperCase().equals(Word)) {
                 match = true;
-            } else if (Selection == 3 && p.getZone().toUpperCase().equals(Written)) {
+            } else if (Selection == 3 && p.getZone().toUpperCase().equals(Word)) {
                 match = true;
             }
             
            if(match){
                found = true;
-               System.out.printf ("                 -                  -                     -                    -    ",
+               System.out.printf ("    %s             -      %s            -      %s               -      %s              - %s   ",
                p.getIdentificationReporter(), p.getFullName(),p.getReportDate(), p.getZone(), p.getTypeTeport());
                   
            }

@@ -12,16 +12,16 @@ import java.util.Scanner;
  */
 public class Pet {
     
-    private String IdentificationReport;
-    private String IdentificationReporter;
-    private String FullName;
-    private String TypeReport;
-    private String ReportDate;
-    private String Zone;
-    private String Species;
-    private String Color;
-    private String ParticularSigns;
-    private String TelephoneNumber;
+    public String IdentificationReport;
+    public String IdentificationReporter;
+    public String FullName;
+    public String TypeReport;
+    public String ReportDate;
+    public String Zone;
+    public String Species;
+    public String Color;
+    public String ParticularSigns;
+    public String TelephoneNumber;
     
     public Pet (){
         this.IdentificationReport = "";
