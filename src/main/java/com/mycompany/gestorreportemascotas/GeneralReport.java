@@ -11,23 +11,27 @@ import java.util.List;
  * @author Jimena
  */
 public class GeneralReport {
-    public static void General (List<Pet> pets){
-       System.out.println ("-----------------------------------------");
-       System.out.println ("       REPORTE GENERAL DE MASCOTAS       ");
-       System.out.println ("-----------------------------------------");
-       System.out.printf ("%-15s- %-18s - %-10s - %-10", 
-               "ID Reportante, Nombre Completo, Fecha, Zona, Tipo");
-       
-       int Old = 0;
-       for (Pet p: pets){
-           System.out.printf ("%-15s- %-18s - %-10s - %-10", 
-           p.getIdentificationReporter (), p.getFullName (), p.getReportDate(),
-       p.getZone(), p.getTypeReport());
-           Old++;
-       }
-       
-       System.out.println ("-------------------------------------------");
-       System.out.println ("Total de Reportes:" + Old);
-       
+
+    public static void General(List<Pet> pets) {
+        System.out.println("----------------------------------------------------");
+        System.out.println("        REPORTE GENERAL DE MASCOTAS                 ");
+        System.out.println("----------------------------------------------------");
+        System.out.printf("%-10s | %-18s | %-8s | %-8s | %-8s%n",
+                "ID Reportante", "Nombre Completo", "Fecha", "Zona", "Tipo");
+
+        int Old = 0;
+        for (Pet p : pets) {
+        System.out.printf("%-10s | %-18s | %-8s | %-8s | %-8s%n",
+                    p.getIdentificationReporter(), p.getFullName(), p.getReportDate(),
+                    p.getZone(), p.getTypeReport());
+            Old++;
+        }
+
+        System.out.println("----------------------------------------------------");
+        System.out.println("\n\n");
+        
+        System.out.println("Total de Reportes:" + Old);
+        System.out.println("\n\n");
+
     }
 }

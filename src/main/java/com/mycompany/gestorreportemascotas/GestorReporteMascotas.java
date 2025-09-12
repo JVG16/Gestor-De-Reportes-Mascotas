@@ -95,7 +95,8 @@ public class GestorReporteMascotas {
                 }
 
                 case 4: {
-                    System.out.println("4");
+                    GroupedReport.Grouped(pets);
+                    break;
                 }
 
                 case 5: {

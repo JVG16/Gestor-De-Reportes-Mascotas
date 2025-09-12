@@ -16,9 +16,9 @@ public class Query {
 
     public static void listOfQueries(List<Pet> pets) {
         Scanner sc = new Scanner(System.in);
-        System.out.println(" -------------------------------------------- ");
-        System.out.println("     CONSULTA DE REPORTES POR CRITERIOS       ");
-        System.out.println(" -------------------------------------------- ");
+        System.out.println(" -------------------------------------------------------------------------- ");
+        System.out.println("                       CONSULTA DE REPORTES POR CRITERIOS                   ");
+        System.out.println(" -------------------------------------------------------------------------- ");
         System.out.println(" Seleccione criterio de búsqueda:");
         System.out.println(" 1. ID del reportante ");
         System.out.println(" 2. Especie ");
@@ -46,7 +46,7 @@ public class Query {
         }
 
         System.out.println(" Resultados encontrados:");
-        System.out.println(" ID Reportante       Nombre        Fecha          Zona          Tipo            ");
+        System.out.println("      ID Reportante     Nombre              Fecha       Zona        Tipo      1  ");
         System.out.println(" -------------------------------------------------------------------------------");
 
         boolean found = false;
@@ -64,7 +64,7 @@ public class Query {
             if (match) {
                 found = true;
                 System.out.printf("    %s       -      %s       -      %s        -      %s              - %s   ",
-                        p.getIdentificationReporter(), p.getFullName(), p.getReportDate(), p.getZone(), p.getTypeTeport());
+                        p.getIdentificationReporter(), p.getFullName(), p.getReportDate(), p.getZone(), p.getTypeReport());
                 System.out.println("\n\n");
 
             }
