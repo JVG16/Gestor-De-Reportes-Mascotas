@@ -24,7 +24,7 @@ public class GroupedReport {
        if (p.getTypeReport().equalsIgnoreCase("PDR")){
            PDR++;   
        } 
-       else if (p.getTypeReport().equalsIgnoreCase("PENC")){
+       else if (p.getTypeReport().equalsIgnoreCase("ENC")){
            ENC++;
        }
    }
@@ -35,10 +35,10 @@ public class GroupedReport {
        int Cat = 0;
        
        for (Pet p: pets){
-       if (p.getTypeReport().equalsIgnoreCase("DOG")){
+       if (p.getSpecies().equalsIgnoreCase("DOG")){
            Dog++;   
        } 
-       else if (p.getTypeReport().equalsIgnoreCase("CAT")){
+       else if (p.getSpecies().equalsIgnoreCase("CAT")){
            Cat++;
        }
    }

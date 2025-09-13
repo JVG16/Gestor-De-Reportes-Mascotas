@@ -46,9 +46,9 @@ public class Query {
         }
 
         System.out.println(" Resultados encontrados:");
-        System.out.println("      ID Reportante     Nombre              Fecha       Zona        Tipo      1  ");
-        System.out.println(" -------------------------------------------------------------------------------");
-
+        System.out.printf("%-10s | %-18s | %-8s | %-8s | %-8s%n",
+                "ID Reportante", "Nombre Completo", "Fecha", "Zona", "Tipo");
+        
         boolean found = false;
         for (Pet p : pets) {
             boolean match = false;
@@ -63,8 +63,9 @@ public class Query {
 
             if (match) {
                 found = true;
-                System.out.printf("    %s       -      %s       -      %s        -      %s              - %s   ",
-                        p.getIdentificationReporter(), p.getFullName(), p.getReportDate(), p.getZone(), p.getTypeReport());
+                System.out.printf("%-10s | %-18s | %-8s | %-8s | %-8s%n",
+                    p.getIdentificationReporter(), p.getFullName(), p.getReportDate(),
+                    p.getZone(), p.getTypeReport());
                 System.out.println("\n\n");
 
             }
