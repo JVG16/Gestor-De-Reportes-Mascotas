@@ -1,4 +1,19 @@
 /*
+UNIVERSIDAD ESTATAL A DISTANCIA
+Estudiante: Jimena Velásquez Gómez.
+Identificación: 1-1919-0417.
+Docente: Gabriela Cervantes Jimenez.
+Proyecto #1.
+Temas 1 y 2.
+Tercer cuatrimestre, 2025.
+
+Descripción:
+
+
+Referencias:
+
+
+
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  */
 package com.mycompany.gestorreportemascotas;
@@ -100,7 +115,8 @@ public class GestorReporteMascotas {
                 }
 
                 case 5: {
-                    System.out.println("5");
+                    MatchFound.Coincidences(pets);
+                    break;
                 }
 
                 case 6: {

@@ -1,11 +1,2 @@
- ID Reporte:12345567 ID reportante:1-1029-9456 Tipo de Reporte:PDR Zona:SAN JOSÉ Especie:CD Color:MARRÓN Señales Particulares:TIENE COLOR AMARILLO Teléfono:8812-2121
- ID Reporte:12345678 ID reportante:1-1234-1234 Tipo de Reporte:PDR Zona:SANTA ANA Especie:DOG Color:MARRÓN Señales Particulares:TIENE 3 MANCHAS CAFÉS Teléfono:8888-8888
- ID Reporte:12345678 ID reportante:1-1919-0417 Tipo de Reporte:PDR Zona:SAN JOSÉ Especie:CAT Color:BLANCO Señales Particulares:TIENE 3 MESES DE GESTACIÓN Teléfono:8987-7887
- ID Reporte:12345678 ID reportante:1-1919-0417 Tipo de Reporte:PDR Zona:SAN JOSÉ Especie:DOG Color:MARRÓN Señales Particulares:TIENE TRRES MANCHAS Teléfono:7878-8787
- ID Reporte:12345556 ID reportante:1-1232-2345 Tipo de Reporte:PDR Zona:SANTA ANA Especie:DOG Color:VERDE Señales Particulares:AAAAAAAAAAAAAAAAAAAAAAAAAA Teléfono:3232-3434
- ID Reporte:12345678 ID reportante:1-1919-0417 Tipo de Reporte:PDR Zona:SAN JOSÉ Especie:DOG Color:MARRÓN Señales Particulares:TIENE DOS MESES DE GESTACIÓN Teléfono:2121-4343
- ID Reporte:12345678 ID reportante:1-1919-0417 Tipo de Reporte:PDR Zona:TURRIALBA Especie:DOG Color:ROSADO Señales Particulares:DEBE TENER 3 MANCHAS Teléfono:2282-2819
- ID Reporte:12345678 ID reportante:1-1919-0417 Tipo de Reporte:ENC Zona:SANTA ANA Especie:DOG Color:VERDE Señales Particulares:AAAAAAAAAAAAAAAAA Teléfono:2243-2345
- ID Reporte:12345678 ID reportante:1-1919-0417 Tipo de Reporte:PDR Zona:SANTA ANA Especie:CAT Color:AMARILLO Señales Particulares:POSEE UNA MANCHA BLANCA Teléfono:3434-5656
- ID Reporte:12345678 ID reportante:1-2343-0555 Tipo de Reporte:ENC Zona:SAN JÓSE Especie:CAT Color:BLANCO Señales Particulares:TIENE MANCHAS AMARILLAS Teléfono:2343-3456
- ID Reporte:34567890 ID reportante:1-1919-0417 Tipo de Reporte:PDR Zona:SAN JOSÉ Especie:DOG Color:MARRÓN Señales Particulares:NO TIENE OTRO COLOR, PERO SÍ UN COLLAR Teléfono:2232-3432
+ ID Reporte:12345678 ID reportante:1-1919-0417 Tipo de Reporte:PDR Zona:SANTA ANA Especie:CAT Color:VERDE Señales Particulares:TIENE MANCHAS Teléfono:2282-2819
+ ID Reporte:12568934 ID reportante:1-1243-0555 Tipo de Reporte:ENC Zona:SANTA ANA Especie:CAT Color:MARRÓN Señales Particulares:TIENE MANCHAS Teléfono:8854-2234
