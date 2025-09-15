@@ -21,7 +21,9 @@ package com.mycompany.gestorreportemascotas;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintStream;
 import java.io.PrintWriter;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -33,6 +35,7 @@ import java.util.Scanner;
 public class GestorReporteMascotas {
 
     public static void main(String[] args) throws IOException {
+        System.setOut(new PrintStream(System.out, true, StandardCharsets.UTF_8));
         Menu menu = new Menu();
         int option;
 
@@ -120,7 +123,7 @@ public class GestorReporteMascotas {
                 }
 
                 case 6: {
-                    System.out.println("6");
+                    UpdateReport.Update(pets);
                 }
 
                 case 7: {
