@@ -1,3 +1,6 @@
  ID Reporte:12345678 ID reportante:1-1919-0417 Tipo de Reporte:PDR Zona:SANTA ANA Especie:CAT Color:VERDE Señales Particulares:TIENE MANCHAS Teléfono:2282-2819
  ID Reporte:12568934 ID reportante:1-1243-0555 Tipo de Reporte:ENC Zona:SANTA ANA Especie:CAT Color:MARRÓN Señales Particulares:TIENE MANCHAS Teléfono:8854-2234
  ID Reporte:REP-0011 ID reportante:1-1919-0417 Tipo de Reporte:PDR Zona:ESCAZÚ Especie:CAT Color:VERDE Señales Particulares:TIENE COLOR ROJO Teléfono:2232-3432
+ ID Reporte:REP-0001 ID reportante:1-1010-0101 Tipo de Reporte:PDR Zona:HEREDIA Especie:CAT Color:BLANCO Señales Particulares:TIENE MANCHAS Teléfono:2232-2323
+ ID Reporte:REP-0001 ID reportante:1-1234-5678 Tipo de Reporte:PDR Zona:SAN JOSÉ Especie:DOG Color:VERDE Señales Particulares:AAAAAAAAAAAAAAASSSSSSSSSSS Teléfono:4444-3333
+ ID Reporte:REP-0001 ID reportante:1-1A19-0417 Tipo de Reporte:PDR Zona:SAN JOSÉ Especie:CAT Color:MARRÓN Señales Particulares:MARRÓN CLARO Teléfono:23M4-3454

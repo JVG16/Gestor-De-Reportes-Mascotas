@@ -15,9 +15,11 @@ public class Menu {
     Scanner sc = new Scanner(System.in);
 
     public void SeeMenu() {
-        System.out.println(" SISTEMA - REFUGIO HUELLAS FELICES ");
-        System.out.println("   GESTOR DE REPORTES DE MASCOTAS ");
-        System.out.println("------------------------------------ ");
+        
+        System.out.println("\n");
+        System.out.println("       SISTEMA - REFUGIO  HUELLAS FELICES       ");
+        System.out.println("         GESTOR DE REPORTES DE MASCOTAS        ");
+        System.out.println("===============================================");
         System.out.println(" 1. Registrar mascota desaparecida ");
         System.out.println(" 2. Consultar por ID / Especie / Zona ");
         System.out.println(" 3. Reporte general ");
@@ -28,7 +30,7 @@ public class Menu {
     }
 
     public int leerOption() {
-        System.out.println(" Ingrese la opción ");
+        System.out.print(" Ingrese la opción: ");
         return sc.nextInt();
     }
 }

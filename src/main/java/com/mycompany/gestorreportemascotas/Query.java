@@ -63,10 +63,10 @@ public class Query {
 
             if (match) {
                 found = true;
-                System.out.printf("%-10s | %-18s | %-8s | %-8s | %-8s%n",
-                    p.getIdentificationReporter(), p.getFullName(), p.getReportDate(),
-                    p.getZone(), p.getTypeReport());
-                System.out.println("\n\n");
+        System.out.printf("%-10s | %-18s | %-8s | %-8s | %-8s%n",
+                p.getIdentificationReporter(), p.getFullName(), p.getReportDate(),
+                p.getZone(), p.getTypeReport());
+                System.out.println("\n");
 
             }
 

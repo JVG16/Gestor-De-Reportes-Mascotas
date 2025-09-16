@@ -79,11 +79,13 @@ public class GestorReporteMascotas {
                     AA.IdentReporter();
                     AA.Name();
                     AA.Report();
+                    AA.Date();
                     AA.Place();
                     AA.Animal();
                     AA.Aspect();
                     AA.Signs();
                     AA.Phone();
+                    AA.Micro();
 
                     try {
 
@@ -131,7 +133,7 @@ public class GestorReporteMascotas {
                 }
 
                 default: {
-                    System.out.println("Opción inválida");
+                    System.out.println(" Opción inválida, por favor vuelva a intentarlo. ");
                 }
 
             }
