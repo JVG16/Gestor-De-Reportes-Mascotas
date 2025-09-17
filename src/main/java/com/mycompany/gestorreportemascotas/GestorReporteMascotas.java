@@ -1,11 +1,32 @@
 /*
+UNIVERSIDAD ESTATAL A DISTANCIA
+Estudiante: Jimena Velásquez Gómez.
+Identificación: 1-1919-0417.
+Docente: Gabriela Cervantes Jimenez.
+Proyecto #1.
+Temas 1 y 2.
+Tercer cuatrimestre, 2025.
+
+Descripción:
+
+
+Referencias:
+Canal de Promamación ATS: 
+
+
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  */
 package com.mycompany.gestorreportemascotas;
 
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintStream;
 import java.io.PrintWriter;
+import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
 
 /**
  *
@@ -14,72 +35,109 @@ import java.io.PrintWriter;
 public class GestorReporteMascotas {
 
     public static void main(String[] args) throws IOException {
+        System.setOut(new PrintStream(System.out, true, StandardCharsets.UTF_8));
         Menu menu = new Menu();
         int option;
+
+        List<Pet> pets = new ArrayList<>();
+
+        try (Scanner sc = new Scanner(new File("Registro.txt"))) {
+            while (sc.hasNextLine()) {
+                String line = sc.nextLine();
+                String[] campos = line.split(";");
+                if (campos.length >= 10) {
+                    Pet p = new Pet();
+                    p.IdentificationReport = campos[0].trim();
+                    p.IdentificationReporter = campos[1].trim();
+                    p.FullName = campos[2].trim();
+                    p.TypeReport = campos[3].trim();
+                    p.ReportDate = campos[4].trim();
+                    p.Zone = campos[5].trim();
+                    p.Species = campos[6].trim();
+                    p.Color = campos[7].trim();
+                    p.ParticularSigns = campos[8].trim();
+                    p.TelephoneNumber = campos[9].trim();
+
+                }
+
+            }
+
+        } catch (Exception e) {
+            System.out.println("Error" + e.getMessage());
+        }
 
         do {
             menu.SeeMenu();
             option = menu.leerOption();
 
             switch (option) {
-                
-                case 1:{
-                    
-                    Pet AA = new Pet ();
-                    AA.IdentReport ();
-                    AA.IdentReporter ();
-                    AA.Name ();
+
+                case 1: {
+
+                    Pet AA = new Pet();
+                    AA.IdentReport();
+                    AA.IdentReporter();
+                    AA.Name();
                     AA.Report();
-                    AA.Place ();
-                    AA.Animal ();
-                    AA.Aspect ();
-                    AA.Signs ();
-                    AA.Phone ();
-                    
-                    try{
-                        
-                        FileWriter archivo = new FileWriter ("Registro.txt", true);
-                        PrintWriter escribir = new PrintWriter (archivo);
-                        
-                        escribir.println(AA.Archive());
-                       escribir.close();
-                       archivo.close();
-                        
-                    }catch (IOException e){
-                        System.out.println ("No se guardó el registro correctamente" + e.getMessage());
+                    AA.Date();
+                    AA.Place();
+                    AA.Animal();
+                    AA.Aspect();
+                    AA.Signs();
+                    AA.Phone();
+                    AA.Micro();
+
+                    try {
+
+                        FileWriter archive = new FileWriter("Registro.txt", true);
+                        PrintWriter write = new PrintWriter(archive);
+
+                        write.println(AA.Archive());
+                        write.close();
+                        write.close();
+
+                    } catch (IOException e) {
+                        System.out.println("No se guardó el registro correctamente" + e.getMessage());
                     }
-                    
+                    pets.add(AA);
+                    break;
+
+                }
+
+                case 2: {
+                    Query.listOfQueries(pets);
                     break;
                 }
-                      
-                case 2:{
-                    System.out.println("2");
+
+                case 3: {
+                    GeneralReport.General(pets);
+                    break;
                 }
-                    
-                case 3:{
-                  System.out.println("3");  
+
+                case 4: {
+                    GroupedReport.Grouped(pets);
+                    break;
                 }
-                    
-                case 4:{
-                    System.out.println("4");
+
+                case 5: {
+                    MatchFound.Coincidences(pets);
+                    break;
                 }
-                    
-                case 5:{
-                    System.out.println("5");
+
+                case 6: {
+                    UpdateReport.Update(pets);
+                    break;
                 }
-                    
-                case 6:{
-                    System.out.println("6");
-                }
-                    
-                case 7:{
+
+                case 7: {
                     System.out.println("Le agradecemos su aporte.");
+                    break;
                 }
-                
+
                 default: {
-                    System.out.println("Opción inválida");
-                }   
-                
+                    System.out.println(" Opción inválida, por favor vuelva a intentarlo. ");
+                }
+
             }
         } while (option != 7);
 
