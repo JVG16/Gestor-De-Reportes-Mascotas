@@ -23,7 +23,7 @@ public class UpdateReport {
         System.out.println("----------------------------------------");
         System.out.println("    ACTUALIZAR ESTADO DE UN REPORTE     ");
         System.out.println("----------------------------------------");
-        System.out.println("Ingrese el ID del reporte (No editable):");
+        System.out.print("Ingrese el ID del reporte (No editable):");
         String IdReport = sc.nextLine().trim();
         
         Pet found = null;
@@ -40,12 +40,11 @@ public class UpdateReport {
         }
         
         System.out.println("Reporte encontrado:");
-        System.out.println(found.toString());
         
         System.out.println("Seleccione nueva opción:");
         System.out.println("1. Editar un solo dato");
         System.out.println("2. Reingresar todos los datos");
-        System.out.println("Ingrese una opción:");
+        System.out.print("Ingrese una opción:");
         int Op = sc.nextInt();
                 sc.nextLine();
         

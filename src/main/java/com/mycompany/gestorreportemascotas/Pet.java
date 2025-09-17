@@ -32,7 +32,7 @@ public class Pet {
     this.IdentificationReport = "";
     this.IdentificationReporter = "";
     this.FullName = "";
-    this.TypeReport = "";
+    this.TypeReport = "PDR";
     this.ReportDate = "";
     this.Zone = "";
     this.Species = "";
@@ -132,14 +132,9 @@ public class Pet {
      
     public void Report(){
          Scanner sc = new Scanner (System.in);
-         boolean Four;
          
-         do{
-       Four = true;
-       System.out.print("Tipo de reporte (PDR/ENC):");
-       this.TypeReport = sc.nextLine().trim().toUpperCase();
-   }while (!Four);  
-     
+       System.out.println("Tipo de reporte (PDR/ENC):PDR");
+       this.TypeReport = "PDR";
    } 
      
     // Validaciones para la Fecha.

@@ -11,7 +11,7 @@ Descripción:
 
 
 Referencias:
-
+Canal de Promamación ATS: 
 
 
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -126,10 +126,12 @@ public class GestorReporteMascotas {
 
                 case 6: {
                     UpdateReport.Update(pets);
+                    break;
                 }
 
                 case 7: {
                     System.out.println("Le agradecemos su aporte.");
+                    break;
                 }
 
                 default: {
