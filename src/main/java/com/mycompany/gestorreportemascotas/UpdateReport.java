@@ -14,9 +14,12 @@ import java.util.Scanner;
  *
  * @author Jimena
  */
+
 public class UpdateReport {
     public static void Update (List<Pet>pets){
         Scanner sc = new Scanner (System.in);
+        
+        System.out.println("\n");
         System.out.println("----------------------------------------");
         System.out.println("    ACTUALIZAR ESTADO DE UN REPORTE     ");
         System.out.println("----------------------------------------");

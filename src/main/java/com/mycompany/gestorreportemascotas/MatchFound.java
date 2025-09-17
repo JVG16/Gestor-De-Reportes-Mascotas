@@ -13,6 +13,8 @@ import java.util.List;
 public class MatchFound {
 
     public static void Coincidences(List<Pet> pets) {
+        
+        System.out.println("\n");
         System.out.println("------------------------------------------");
         System.out.println("   REPORTE DE COINCIDENCIAS ENCONTRADAS   ");
         System.out.println("------------------------------------------");

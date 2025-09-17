@@ -13,6 +13,8 @@ import java.util.List;
 public class GeneralReport {
 
     public static void General(List<Pet> pets) {
+        
+        System.out.println("\n");
         System.out.println("----------------------------------------------------");
         System.out.println("        REPORTE GENERAL DE MASCOTAS                 ");
         System.out.println("----------------------------------------------------");
@@ -28,10 +30,9 @@ public class GeneralReport {
         }
 
         System.out.println("----------------------------------------------------");
-        System.out.println("\n\n");
         
         System.out.println("Total de Reportes:" + Old);
-        System.out.println("\n\n");
+        
 
     }
 }

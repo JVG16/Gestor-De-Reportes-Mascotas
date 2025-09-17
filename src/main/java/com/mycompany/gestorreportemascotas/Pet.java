@@ -4,6 +4,9 @@
  */
 package com.mycompany.gestorreportemascotas;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
 import java.util.Scanner;
 
 /**
@@ -135,7 +138,7 @@ public class Pet {
        Four = true;
        System.out.print("Tipo de reporte (PDR/ENC):");
        this.TypeReport = sc.nextLine().trim().toUpperCase();
-   }while (this.TypeReport == null);  
+   }while (!Four);  
      
    } 
      
@@ -145,11 +148,22 @@ public class Pet {
          Scanner sc = new Scanner (System.in);
          boolean Five = true;
          
+         DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+         
          do{
-       System.out.print("Ingrese la fecha del reporte:");
+       System.out.print("Ingrese la fecha del reporte(dd/MM/yyyy):");
        this.ReportDate = sc.nextLine().trim().toUpperCase();
        
+       try {
+             LocalDate.parse(ReportDate,formato);
+             Five = true;
+         }catch (DateTimeParseException e){
+             System.out.println("Fecha inválida. Por favor, vuelva a intentarlo");
+             Five = false;
+         }
+                 
    }while (!Five);
+   
          }
     
     // Validaciones para la Zona.

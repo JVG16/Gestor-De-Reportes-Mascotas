@@ -4,3 +4,7 @@
  ID Reporte:REP-0001 ID reportante:1-1010-0101 Tipo de Reporte:PDR Zona:HEREDIA Especie:CAT Color:BLANCO Señales Particulares:TIENE MANCHAS Teléfono:2232-2323
  ID Reporte:REP-0001 ID reportante:1-1234-5678 Tipo de Reporte:PDR Zona:SAN JOSÉ Especie:DOG Color:VERDE Señales Particulares:AAAAAAAAAAAAAAASSSSSSSSSSS Teléfono:4444-3333
  ID Reporte:REP-0001 ID reportante:1-1A19-0417 Tipo de Reporte:PDR Zona:SAN JOSÉ Especie:CAT Color:MARRÓN Señales Particulares:MARRÓN CLARO Teléfono:23M4-3454
+ ID Reporte:REP-0001 ID reportante:1-1919-0417 Tipo de Reporte:PDR Zona:SAN JOSÉ Especie:CAT Color:MARRÓN Señales Particulares:NO POSEE OTRO COLOR Teléfono:2A23-2323
+ ID Reporte:REP-0001 ID reportante:1-1919-0417 Tipo de Reporte:PDR Zona:SAN JOSÉ Especie:CAT Color:SAN JOSÉ Señales Particulares:NO POSEE UN SOLO COLOR Teléfono:2232-2323
+ ID Reporte:REP-0001 ID reportante:1-1919-0417 Tipo de Reporte:PDR Zona:SANTA ANA Especie:DOG Color:MARRÓN Señales Particulares:TIENE OJOS VERDES Teléfono:2232-2323
+ ID Reporte:REP-0001 ID reportante:1-1234-5678 Tipo de Reporte:ENC Zona:SAN JOSÉ Especie:DOG Color:MARRON Señales Particulares:AAAAAAAAAAAA Teléfono:2323-3434
