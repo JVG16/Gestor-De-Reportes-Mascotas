@@ -7,6 +7,7 @@ package com.mycompany.gestorreportemascotas;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
+import static java.time.temporal.TemporalQueries.localDate;
 import java.util.Scanner;
 
 /**
@@ -92,7 +93,7 @@ public class Pet {
            Two = false;
        }
        
-       if (IdentificationReporter.matches ("\\d+")){
+       if (!IdentificationReporter.matches ("\\d-\\d{4}-\\d{4}")){
            System.out.println("La cédula debe contener únicamente números, no carácteres.");  
            Two = false;
        }
@@ -156,6 +157,10 @@ public class Pet {
              System.out.println("Fecha inválida. Por favor, vuelva a intentarlo");
              Five = false;
          }
+       
+       if (ReportDate.isEmpty()){
+           this.ReportDate = LocalDate.now(). format(formato);
+       }
                  
    }while (!Five);
    
@@ -254,8 +259,8 @@ public class Pet {
           Ten = false;
        }
        
-       if (TelephoneNumber.matches ("\\d+")){
-           System.out.println("El número de teléfono u contacto solo debe contener números. Por favor, vuelva a intentarlo.");  
+        if (!TelephoneNumber.matches ("\\d{4}-\\d{4}")){
+           System.out.println("El número de teléfono no puede contener carácteres. Por favor, vuelva a intentarlo.");  
            Ten = false;
        }
        
@@ -308,18 +313,6 @@ public class Pet {
     }
     public String getTelephoneNumber() {
         return TelephoneNumber;
-    }
-    
-    public String Archive (){
-        return " ID Reporte:" + IdentificationReport + 
-               " ID reportante:" + IdentificationReporter+
-               " Tipo de Reporte:"+ TypeReport+
-               " Zona:" + Zone+
-               " Especie:"+ Species+
-               " Color:" + Color +
-               " Señales Particulares:" + ParticularSigns +
-               " Teléfono:" + TelephoneNumber;
-                
     }
      
      }

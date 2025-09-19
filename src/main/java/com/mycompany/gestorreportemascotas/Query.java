@@ -63,6 +63,8 @@ public class Query {
 
             if (match){
                 if (!found){
+                    
+                      System.out.println("\n");
                       System.out.println(" Resultados encontrados:");
         System.out.printf("%-10s | %-18s | %-8s | %-8s | %-8s%n",
                 "ID Reportante", "Nombre Completo", "Fecha", "Zona", "Tipo");
@@ -72,8 +74,6 @@ public class Query {
         System.out.printf("%-10s | %-18s | %-8s | %-8s | %-8s%n",
                 p.getIdentificationReporter(), p.getFullName(), p.getReportDate(),
                 p.getZone(), p.getTypeReport());
-                System.out.println("\n");
-
             }
         }
 

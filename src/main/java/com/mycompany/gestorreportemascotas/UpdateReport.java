@@ -4,9 +4,6 @@
  */
 package com.mycompany.gestorreportemascotas;
 
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.List;
 import java.util.Scanner;
 
@@ -39,7 +36,21 @@ public class UpdateReport {
             return;
         }
         
+        if(found != null){
         System.out.println("Reporte encontrado:");
+        System.out.println("ID Reporte:" + found.IdentificationReport);
+        System.out.println("ID Reportante:" + found.IdentificationReporter);
+        System.out.println("Nombre:" + found.FullName);
+        System.out.println("Tipo:" + found.TypeReport);
+        System.out.println("Fecha:" + found.ReportDate);
+        System.out.println("Zona:" + found.Zone);
+        System.out.println("Especie:" + found.Species);
+        System.out.println("Color:" + found.Color);
+        System.out.println("Señas:" + found.ParticularSigns);
+        System.out.println("Teléfono:" + found.TelephoneNumber);
+        System.out.println("Microchip:" + found.Microchip);
+        }
+        
         
         System.out.println("Seleccione nueva opción:");
         System.out.println("1. Editar un solo dato");
@@ -121,16 +132,6 @@ public class UpdateReport {
                     System.out.println ("Opción inválida");
                     return;
                 }
-        
-                  // Guardar cambios en archivo
-        try (PrintWriter writer = new PrintWriter(new FileWriter("Registro.txt", false))) {
-            for (Pet p : pets) {
-                writer.println(p.Archive());
-            }
-            System.out.println("Reporte actualizado correctamente.");
-        } catch (IOException e) {
-            System.out.println("Error al guardar los cambios: " + e.getMessage());
-        }
     }   
 }
 
