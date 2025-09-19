@@ -55,9 +55,7 @@ public class MatchFound {
                System.out.println("Zona:" + ENC.getZone());
                System.out.println("Fecha:"+ ENC.getReportDate());
                System.out.println("------------------------------------------");
-               
-               
-               
+                          
            }
                
         }
