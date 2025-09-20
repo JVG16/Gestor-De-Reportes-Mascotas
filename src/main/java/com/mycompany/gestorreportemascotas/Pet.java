@@ -7,7 +7,6 @@ package com.mycompany.gestorreportemascotas;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
-import static java.time.temporal.TemporalQueries.localDate;
 import java.util.Scanner;
 
 /**
@@ -87,21 +86,21 @@ public class Pet {
        System.out.print("Ingrese ID del reportante (1-1111-1111):");
        this.IdentificationReporter= sc.nextLine().trim().toUpperCase();
        
-       if(IdentificationReporter.charAt(1)!='-'|| IdentificationReporter.charAt(6)!= '-'){
-           
-           System.out.println("El formato es incorrecto, por favor vuelva a intentarlo.");
+       if(IdentificationReporter.isEmpty()){
+           System.out.println("No puede dejar en blanco el número de cédula");
            Two = false;
+       }
+       
+       if (IdentificationReporter.length()!=11){
+           System.out.println ("La cantidad esperada de carácteres en total es de 11. Por favor, vuelva a intentarlo.");
+           Two = false; 
        }
        
        if (!IdentificationReporter.matches ("\\d-\\d{4}-\\d{4}")){
            System.out.println("La cédula debe contener únicamente números, no carácteres.");  
            Two = false;
        }
-       if (IdentificationReporter.length()!=11){
-           System.out.println ("La cantidad esperada de carácteres en total es de 11. Por favor, vuelva a intentarlo.");
-           Two = false; 
-       }
-           
+       
    }while (!Two);  
      
    }  
@@ -117,6 +116,12 @@ public class Pet {
        Three = true;
        System.out.print("Ingrese el nombre completo:");
        this.FullName= sc.nextLine().trim().toUpperCase();
+       
+       if(FullName.isEmpty()){
+           System.out.println("No puede dejar en blanco el nombre completo");
+           Three = false;
+       }
+       
        if (FullName.length()>=7){
            Three = true;
        }
@@ -177,11 +182,17 @@ public class Pet {
        Six = true;
        System.out.print("Ingrese la zona:");
        this.Zone = sc.nextLine().trim().toUpperCase();
+            
        if (Zone.length()<= 30){
            Six = true;
        }
        else{
            System.out.println("El texto debe contener como máximo 30 carácteres");
+           Six = false;
+       }
+       
+       if(Zone.isEmpty()){
+           System.out.println("No puede dejar en blanco la zona");
            Six = false;
        }
        
@@ -199,6 +210,7 @@ public class Pet {
        Seven = true;
        System.out.print("Ingrese especie (DOG/CAT):");
        this.Species= sc.nextLine().trim().toUpperCase();
+        
        if (Species.equals("DOG")||Species.equals("CAT")){
            Seven = true;
        }
@@ -206,6 +218,12 @@ public class Pet {
            System.out.println("Debe ingresar una de las dos opciones mencionadas anteriormente.");
            Seven = false;
        }
+       
+       if (Species.isEmpty()){
+           System.out.println("No puede dejar en blanco el tipo de especie");
+           Seven = false;
+       }
+       
    }while (!Seven);  
      
    }
@@ -214,9 +232,17 @@ public class Pet {
     
     public void Aspect (){
          Scanner sc = new Scanner (System.in);
+         boolean Eight;
          do{
+             
+             Eight = true;
        System.out.print("Ingrese color principal:");
        this.Color = sc.nextLine().trim().toUpperCase();
+       
+       if (Color.isEmpty()){
+           System.out.println("No puede dejar en blanco el color");
+           Eight = false;
+       }
    }while (this.Color == null);  
      
    }
@@ -231,6 +257,7 @@ public class Pet {
        Nine = true;
        System.out.print("Ingrese señas particulares (mínimo 10 carácteres):");
        this.ParticularSigns = sc.nextLine().trim().toUpperCase();
+          
        if (ParticularSigns.length()>=10){
            Nine = true;
        }
@@ -238,6 +265,11 @@ public class Pet {
           System.out.println("Debe tener mínimo 10 carácteres"); 
           Nine = false;
        } 
+       
+       if (ParticularSigns.isEmpty()){
+           System.out.println("No puede dejar en blanco las señas particulares de la mascota");
+           Nine = false;
+       }
        
    }while (!Nine);  
      
@@ -254,9 +286,20 @@ public class Pet {
        Ten = true;
        System.out.print("Ingrese teléfono de contacto (####-####):");
        this.TelephoneNumber = sc.nextLine().trim().toUpperCase();
+       
+       if (TelephoneNumber.isEmpty()){
+           System.out.println ("No puede dejar el campo vacío");
+           Ten = false;
+       }
+               
        if(TelephoneNumber.charAt(4)!='-'){
           System.out.println("El formato del teléfono de contacto es incorrecto. Por favor, vuelva a intentarlo."); 
           Ten = false;
+       }
+       
+       if(TelephoneNumber.length()!=9){
+           System.out.println(" La longuitud debe ser de 9 incluyendo el guión");
+           Ten = false;
        }
        
         if (!TelephoneNumber.matches ("\\d{4}-\\d{4}")){

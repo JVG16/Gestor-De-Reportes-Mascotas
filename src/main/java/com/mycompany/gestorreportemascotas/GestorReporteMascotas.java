@@ -32,9 +32,11 @@ import java.util.Scanner;
 public class GestorReporteMascotas {
 
     public static void main(String[] args) throws IOException {  
+        
         System.setOut(new PrintStream(System.out, true, StandardCharsets.UTF_8));
         Menu menu = new Menu();
         int option;
+        boolean OrderExcecute = false;
 
         List<Pet> pets = new ArrayList<>();
 
@@ -60,32 +62,64 @@ public class GestorReporteMascotas {
                     AA.Micro();
 
                     pets.add(AA);
+                    OrderExcecute = true;
                     break;
 
                 }
 
                 case 2: {
-                    Query.listOfQueries(pets);
+                    
+                    if (OrderExcecute){
+                        Query.listOfQueries(pets);
+                    }
+                    else{
+                      System.out.println("Debe de realizar el registro");
+                    }
                     break;
                 }
 
                 case 3: {
-                    GeneralReport.General(pets);
+                    
+                    if(OrderExcecute){
+                       GeneralReport.General(pets);
+                    }
+                    else{
+                        System.out.println ("Debe de realizar el registro");
+                    }
                     break;
                 }
 
                 case 4: {
-                    GroupedReport.Grouped(pets);
+                    
+                    if(OrderExcecute){
+                     GroupedReport.Grouped(pets);  
+                    }
+                    else {
+                        System.out.println("Debe de realizar el registro");
+                    }   
                     break;
                 }
 
                 case 5: {
-                    MatchFound.Coincidences(pets);
+                    
+                    if(OrderExcecute){
+                     MatchFound.Coincidences(pets);  
+                    }
+                    else {
+                      System.out.println("Debe de realizar el registro");  
+                    }
+                    
                     break;
                 }
 
                 case 6: {
-                    UpdateReport.Update(pets);
+                    
+                    if (OrderExcecute){
+                     UpdateReport.Update(pets);
+                    }
+                    else{
+                        System.out.println("Debe de realizar el registro");
+                    }
                     break;
                 }
 
