@@ -25,7 +25,7 @@ public class UpdateReport {
         
         Pet found = null;
         for (Pet p: pets){
-            if (p.IdentificationReport.equalsIgnoreCase(IdReport)){
+            if (p.getIdentificationReport().equalsIgnoreCase(IdReport)){
                 found = p;
                 break;
             }
@@ -38,17 +38,17 @@ public class UpdateReport {
         
         if(found != null){
         System.out.println("Reporte encontrado:");
-        System.out.println("ID Reporte:" + found.IdentificationReport);
-        System.out.println("ID Reportante:" + found.IdentificationReporter);
-        System.out.println("Nombre:" + found.FullName);
-        System.out.println("Tipo:" + found.TypeReport);
-        System.out.println("Fecha:" + found.ReportDate);
-        System.out.println("Zona:" + found.Zone);
-        System.out.println("Especie:" + found.Species);
-        System.out.println("Color:" + found.Color);
-        System.out.println("Señas:" + found.ParticularSigns);
-        System.out.println("Teléfono:" + found.TelephoneNumber);
-        System.out.println("Microchip:" + found.Microchip);
+        System.out.println("ID Reporte:" + found.getIdentificationReport());
+        System.out.println("ID Reportante:" + found.getIdentificationReporter());
+        System.out.println("Nombre:" + found.getFullName());
+        System.out.println("Tipo:" + found.getTypeReport());
+        System.out.println("Fecha:" + found.getReportDate());
+        System.out.println("Zona:" + found.getZone());
+        System.out.println("Especie:" + found.getSpecies());
+        System.out.println("Color:" + found.getColor());
+        System.out.println("Señas:" + found.getParticularSigns());
+        System.out.println("Teléfono:" + found.getTelephoneNumber());
+        System.out.println("Microchip:" + found.getMicrochip());
         }
         
         
@@ -76,37 +76,37 @@ public class UpdateReport {
                 switch (Edit){
                     case 1:
                        System.out.println("Ingrese el nombre completo:"); 
-                       found.FullName= sc.nextLine();
+                       found.setFullName(sc.nextLine());
                        break;
                        
                     case 2:
                        System.out.println("Ingrese el tipo de reporte (PDR/ENC):"); 
-                       found.TypeReport = sc.nextLine();
+                       found.setTypeReport(sc.nextLine());
                        break;
                        
                     case 3:
                        System.out.println("Ingrese la zona:"); 
-                       found.Zone = sc.nextLine();
+                       found.setZone(sc.nextLine());
                        break;
                        
                     case 4:
                        System.out.println("Ingrese la especie (DOG/CAT):"); 
-                       found.Species = sc.nextLine();
+                       found.setSpecies(sc.nextLine());
                        break;
                        
                     case 5:
                        System.out.println("Ingrese el color principal:"); 
-                       found.Color = sc.nextLine();
+                       found.setColor(sc.nextLine());
                        break;
                        
                     case 6:
                        System.out.println("Ingrese las señas particulares:"); 
-                       found.ParticularSigns = sc.nextLine();
+                       found.setParticularSigns(sc.nextLine());
                        break;
                        
                     case 7:
                        System.out.println("Ingrese el número de teléfono:"); 
-                       found.TelephoneNumber = sc.nextLine();
+                       found.setTelephoneNumber(sc.nextLine());
                        break;
                        
                     case 8:
