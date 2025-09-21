@@ -13,6 +13,7 @@ import java.util.Scanner;
  *
  * @author Jimena
  */
+
 public class Pet {
     
     private String IdentificationReport;
@@ -174,12 +175,13 @@ public class Pet {
        if (IdentificationReport.length()!=8){
            System.out.println ("La cantidad esperada de carácteres en total es de 8. Por favor, vuelva a intentarlo.");
            One = false; 
-       }
-       else if (!IdentificationReport.startsWith("REP-")){
+       } else if (!IdentificationReport.startsWith("REP-")){
            System.out.println ("Se incluir primero el prefijo (REP-). Por favor, vuelva a intentarlo. ");
            One = false;
+       }else if(!IdentificationReport.substring(4). matches("\\d{4}")){
+           System.out.println("No puede ingresar carácteres");
+           One = false;
        }
-       
    }while (!One);              
 }
       
@@ -243,15 +245,42 @@ public class Pet {
      
    }
      
-     // Validaciones para el tipo de Reporte.
+     // Tipo de Reporte.
      
     public void Report(){
          Scanner sc = new Scanner (System.in);
-         
-       System.out.println("Tipo de reporte (PDR/ENC):PDR");
        this.TypeReport = "PDR";
+       System.out.println("Ingrese el tipo de reporte (PDR/ENC)[Por defecto PDR]:" + this.TypeReport);
    } 
      
+    
+    // Validaciones por el tipo de Reporte
+    
+    public void ModifyReport (){
+        Scanner sc = new Scanner (System.in);
+        boolean Four;
+        
+        do{
+            Four = true;
+           System.out.println("Tipo de reporte (PDR/ENC):");
+        String Modify = sc.nextLine().toUpperCase(); 
+        if (Modify.equals("PDR")|| Modify.equals("ENC")){
+    this.TypeReport = Modify;
+    Four = true; 
+}
+        else{
+            System.out.println("Solo puede ingresar una de esas dos opciones");
+            Four = false;
+        }
+        if (Modify.isEmpty()){
+           System.out.println("No puede dejar el campo vacío");
+           Four = false;
+       }
+        }while(!Four);
+        
+    }
+    
+    
     // Validaciones para la Fecha.
     
     public void Date(){
@@ -433,5 +462,6 @@ public class Pet {
    }while (!Eleven);  
      
    }
+     
      }
 
