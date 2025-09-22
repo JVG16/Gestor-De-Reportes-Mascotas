@@ -14,7 +14,9 @@ import java.util.Scanner;
 
 public class Menu {
     Scanner sc = new Scanner(System.in);
+    
   public void SeeMenu(){
+      
       System.out.println(" SISTEMA - REFUGIO HUELLAS FELICES ");
       System.out.println(" GESTOR DE REPORTES DE MASCOTAS ");
       System.out.println("------------------------------- ");

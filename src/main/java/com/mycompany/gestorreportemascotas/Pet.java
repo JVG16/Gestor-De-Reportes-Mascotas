@@ -13,20 +13,39 @@ import java.util.Scanner;
  *
  * @author Jimena
  */
+
 public class Pet {
     
-    public String IdentificationReport;
-    public String IdentificationReporter;
-    public String FullName;
-    public String TypeReport;
-    public String ReportDate;
-    public String Zone;
-    public String Species;
-    public String Color;
-    public String ParticularSigns;
-    public String TelephoneNumber;
-    public String Microchip;
+    private String IdentificationReport;
+    private String IdentificationReporter;
+    private String FullName;
+    private String TypeReport;
+    private String ReportDate;
+    private String Zone;
+    private String Species;
+    private String Color;
+    private String ParticularSigns;
+    private String TelephoneNumber;
+    private String Microchip;
+
     
+    // Constructores.
+    
+    public Pet(String IdentificationReport, String IdentificationReporter, String FullName, String TypeReport, String ReportDate, String Zone, String Species, String Color, String ParticularSigns, String TelephoneNumber, String Microchip) {
+        this.IdentificationReport = IdentificationReport;
+        this.IdentificationReporter = IdentificationReporter;
+        this.FullName = FullName;
+        this.TypeReport = TypeReport;
+        this.ReportDate = ReportDate;
+        this.Zone = Zone;
+        this.Species = Species;
+        this.Color = Color;
+        this.ParticularSigns = ParticularSigns;
+        this.TelephoneNumber = TelephoneNumber;
+        this.Microchip = Microchip;
+    }
+
+   
     public Pet (){
         
     this.IdentificationReport = "";
@@ -42,6 +61,97 @@ public class Pet {
     this.Microchip = "";
         
     }
+     
+    // Getters y Setters.
+
+    public String getIdentificationReport() {
+        return IdentificationReport;
+    }
+
+    public void setIdentificationReport(String IdentificationReport) {
+        this.IdentificationReport = IdentificationReport;
+    }
+
+    public String getIdentificationReporter() {
+        return IdentificationReporter;
+    }
+
+    public void setIdentificationReporter(String IdentificationReporter) {
+        this.IdentificationReporter = IdentificationReporter;
+    }
+
+    public String getFullName() {
+        return FullName;
+    }
+
+    public void setFullName(String FullName) {
+        this.FullName = FullName;
+    }
+
+    public String getTypeReport() {
+        return TypeReport;
+    }
+
+    public void setTypeReport(String TypeReport) {
+        this.TypeReport = TypeReport;
+    }
+
+    public String getReportDate() {
+        return ReportDate;
+    }
+
+    public void setReportDate(String ReportDate) {
+        this.ReportDate = ReportDate;
+    }
+
+    public String getZone() {
+        return Zone;
+    }
+
+    public void setZone(String Zone) {
+        this.Zone = Zone;
+    }
+
+    public String getSpecies() {
+        return Species;
+    }
+
+    public void setSpecies(String Species) {
+        this.Species = Species;
+    }
+
+    public String getColor() {
+        return Color;
+    }
+
+    public void setColor(String Color) {
+        this.Color = Color;
+    }
+
+    public String getParticularSigns() {
+        return ParticularSigns;
+    }
+
+    public void setParticularSigns(String ParticularSigns) {
+        this.ParticularSigns = ParticularSigns;
+    }
+
+    public String getTelephoneNumber() {
+        return TelephoneNumber;
+    }
+
+    public void setTelephoneNumber(String TelephoneNumber) {
+        this.TelephoneNumber = TelephoneNumber;
+    }
+
+    public String getMicrochip() {
+        return Microchip;
+    }
+
+    public void setMicrochip(String Microchip) {
+        this.Microchip = Microchip;
+    }
+    
     
     
     // Validaciones ID del Reporte.
@@ -65,12 +175,13 @@ public class Pet {
        if (IdentificationReport.length()!=8){
            System.out.println ("La cantidad esperada de carácteres en total es de 8. Por favor, vuelva a intentarlo.");
            One = false; 
-       }
-       else if (!IdentificationReport.startsWith("REP-")){
+       } else if (!IdentificationReport.startsWith("REP-")){
            System.out.println ("Se incluir primero el prefijo (REP-). Por favor, vuelva a intentarlo. ");
            One = false;
+       }else if(!IdentificationReport.substring(4). matches("\\d{4}")){
+           System.out.println("No puede ingresar carácteres");
+           One = false;
        }
-       
    }while (!One);              
 }
       
@@ -134,15 +245,42 @@ public class Pet {
      
    }
      
-     // Validaciones para el tipo de Reporte.
+     // Tipo de Reporte.
      
     public void Report(){
          Scanner sc = new Scanner (System.in);
-         
-       System.out.println("Tipo de reporte (PDR/ENC):PDR");
        this.TypeReport = "PDR";
+       System.out.println("Ingrese el tipo de reporte (PDR/ENC)[Por defecto PDR]:" + this.TypeReport);
    } 
      
+    
+    // Validaciones por el tipo de Reporte
+    
+    public void ModifyReport (){
+        Scanner sc = new Scanner (System.in);
+        boolean Four;
+        
+        do{
+            Four = true;
+           System.out.println("Tipo de reporte (PDR/ENC):");
+        String Modify = sc.nextLine().toUpperCase(); 
+        if (Modify.equals("PDR")|| Modify.equals("ENC")){
+    this.TypeReport = Modify;
+    Four = true; 
+}
+        else{
+            System.out.println("Solo puede ingresar una de esas dos opciones");
+            Four = false;
+        }
+        if (Modify.isEmpty()){
+           System.out.println("No puede dejar el campo vacío");
+           Four = false;
+       }
+        }while(!Four);
+        
+    }
+    
+    
     // Validaciones para la Fecha.
     
     public void Date(){
@@ -324,39 +462,6 @@ public class Pet {
    }while (!Eleven);  
      
    }
-    
-   // Creación de get.
-    
-    public String getIdentificationReport() {
-        return IdentificationReport;
-    }
-    public String getIdentificationReporter() {
-        return IdentificationReporter;
-    }
-    public String getFullName() {
-        return FullName;
-    }
-    public String getTypeReport() {
-        return TypeReport;
-    }
-    public String getReportDate() {
-        return ReportDate;
-    }
-    public String getZone() {
-        return Zone;
-    }
-    public String getSpecies() {
-        return Species;
-    }
-    public String getColor() {
-        return Color;
-    }
-    public String getParticularSigns() {
-        return ParticularSigns;
-    }
-    public String getTelephoneNumber() {
-        return TelephoneNumber;
-    }
      
      }
 

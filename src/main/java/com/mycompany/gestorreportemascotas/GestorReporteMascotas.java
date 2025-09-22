@@ -7,23 +7,37 @@ Proyecto #1.
 Temas 1 y 2.
 Tercer cuatrimestre, 2025.
 
-Descripción:
+Descripción: 
+Huellas Felices es un refugio de mascotas. Se solicita crear una aplicación 
+llamada Gestor de Reporte de Mascotas. Esta aplicación tendrá múltiples opciones 
+dentro del menú, permitiendo al usuario realizar uno o varios registros, consultar 
+el reporte general y agrupado, visualizar si hay coincidencias y si fuera necesario,
+modificar algún dato o bien, reingresar todos los campos. De esta manera, el 
+programa se convertirá en una herramienta muy importante para llevar un registro
+más ordenado de las mascotas perdidas o encontradas en el refugio.
 
 
 Referencias:
-Canal de Promamación ATS: 
+Canal de Promamación ATS: https://www.youtube.com/playlist?list=PLWtYZ2ejMVJkjOuTCzIk61j7XKfpIR74K
+Presentación Programación Intermedia Tema I: https://aprende.uned.ac.cr/pluginfile.php/2014599/mod_resource/content/1/Presentacio%CC%81n%20Tema%201_824_2023.pdf
+Presentación Progrmación intermedia Tema II: https://aprende.uned.ac.cr/pluginfile.php/2014610/mod_resource/content/1/Presentacio%CC%81n%20Tema%202_824_2023.pdf
+Canal de YouTube: https://www.youtube.com/watch?v=TDc2u-3EP3Q&ab_channel=%D0%A4%D0%B5%D0%B4%D0%BE%D1%82%D0%A8%D0%BC%D0%B0%D0%BA%D0%BE%D0%B2 
+Página web: https://www.ibm.com/docs/es/i/7.4.0?topic=java-code-examples
+Página web: https://www.ionos.com/es-us/digitalguide/paginas-web/desarrollo-web/java-variables/ 
 
 
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  */
 package com.mycompany.gestorreportemascotas;
 
+// Librerías necesarias para el desarrollo óptimo del programa.
+
 import java.io.IOException;
 import java.io.PrintStream;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
+
 
 /**
  *
@@ -33,16 +47,18 @@ public class GestorReporteMascotas {
 
     public static void main(String[] args) throws IOException {  
         
-        System.setOut(new PrintStream(System.out, true, StandardCharsets.UTF_8));
+        System.setOut(new PrintStream(System.out, true, StandardCharsets.UTF_8)); // Estrucutra necesaria para los carácteres.
         Menu menu = new Menu();
         int option;
-        boolean OrderExcecute = false;
+        boolean OrderExcecute = false; // Permite el orden de ejecución del programa.
 
-        List<Pet> pets = new ArrayList<>();
+        List<Pet> pets = new ArrayList<>(); // 
 
         do {
-            menu.SeeMenu();
+            menu.SeeMenu(); // Muestra el menú.
             option = menu.leerOption();
+            
+            // Manejo de las opciones.
 
             switch (option) {
 
@@ -73,7 +89,7 @@ public class GestorReporteMascotas {
                         Query.listOfQueries(pets);
                     }
                     else{
-                      System.out.println("Debe de realizar el registro");
+                      System.out.println("Para continuar, primero debe completar el registro");
                     }
                     break;
                 }
@@ -84,7 +100,7 @@ public class GestorReporteMascotas {
                        GeneralReport.General(pets);
                     }
                     else{
-                        System.out.println ("Debe de realizar el registro");
+                        System.out.println ("Para continuar, primero debe completar el registro");
                     }
                     break;
                 }
@@ -95,7 +111,7 @@ public class GestorReporteMascotas {
                      GroupedReport.Grouped(pets);  
                     }
                     else {
-                        System.out.println("Debe de realizar el registro");
+                        System.out.println("Para continuar, primero debe completar el registro");
                     }   
                     break;
                 }
@@ -106,7 +122,7 @@ public class GestorReporteMascotas {
                      MatchFound.Coincidences(pets);  
                     }
                     else {
-                      System.out.println("Debe de realizar el registro");  
+                      System.out.println("Para continuar, primero debe completar el registro");  
                     }
                     
                     break;
@@ -118,7 +134,7 @@ public class GestorReporteMascotas {
                      UpdateReport.Update(pets);
                     }
                     else{
-                        System.out.println("Debe de realizar el registro");
+                        System.out.println("Para continuar, primero debe completar el registro");
                     }
                     break;
                 }

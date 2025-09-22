@@ -37,7 +37,7 @@ public class MatchFound {
             
            if (Similitudes>=2){
                sum++;
-               
+              
                System.out.println("PDR-Pérdida");
                System.out.println("ID Reportante:"+ PDR.getIdentificationReporter());
                System.out.println("Nombre:"+ PDR.getFullName());
@@ -46,7 +46,7 @@ public class MatchFound {
                System.out.println("Zona:" +PDR.getZone());
                System.out.println("Fecha:"+PDR.getReportDate());
                
-               
+               System.out.println("\n");
                System.out.println("ENC-Encontrada");
                System.out.println("ID Reportante:"+ ENC.getIdentificationReporter());
                System.out.println("Nombre:"+ ENC.getFullName());

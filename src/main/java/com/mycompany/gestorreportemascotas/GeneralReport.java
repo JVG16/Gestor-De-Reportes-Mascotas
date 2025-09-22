@@ -12,7 +12,7 @@ import java.util.List;
  */
 public class GeneralReport {
 
-    public static void General(List<Pet> pets) {
+    public static void General (List<Pet> pets) {
         
         System.out.println("\n");
         System.out.println("----------------------------------------------------");

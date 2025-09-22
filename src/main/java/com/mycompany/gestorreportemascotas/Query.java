@@ -12,6 +12,7 @@ import java.util.Scanner;
  *
  * @author Jimena
  */
+
 public class Query {
 
     public static void listOfQueries(List<Pet> pets) {
@@ -25,7 +26,7 @@ public class Query {
         System.out.println(" 1. ID del reportante ");
         System.out.println(" 2. Especie ");
         System.out.println(" 3. Zona ");
-        System.out.print(" Digite un criterio de búsqueda:");
+        System.out.print(" Seleccione un criterio de búsqueda:");
         int Selection = sc.nextInt();
         sc.nextLine();
 
@@ -46,11 +47,9 @@ public class Query {
             System.out.println("Opción inválida");
             return;
         }
-
-      
-        
+  
         boolean found = false;
-        for (Pet p : pets) {
+        for (Pet p : pets) { // Ciclo que recorre 
             boolean match = false;
 
             if (Selection == 1 && p.getIdentificationReporter().toUpperCase().equals(Word)) {
@@ -67,7 +66,7 @@ public class Query {
                       System.out.println("\n");
                       System.out.println(" Resultados encontrados:");
         System.out.printf("%-10s | %-18s | %-8s | %-8s | %-8s%n",
-                "ID Reportante", "Nombre Completo", "Fecha", "Zona", "Tipo");
+                "ID Reportante","Nombre Completo", "Fecha", "Zona", "Tipo");
                 }
                 
                 found = true;
