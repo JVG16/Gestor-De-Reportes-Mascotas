@@ -51,7 +51,7 @@ public class Pet {
     this.IdentificationReport = "";
     this.IdentificationReporter = "";
     this.FullName = "";
-    this.TypeReport = "PDR";
+    this.TypeReport = "PDR"; // Se debe declarar ya que por defecto debe de aparecer.
     this.ReportDate = "";
     this.Zone = "";
     this.Species = "";
@@ -195,7 +195,7 @@ public class Pet {
              
        Two = true;
        System.out.print("Ingrese ID del reportante (1-1111-1111):");
-       this.IdentificationReporter= sc.nextLine().trim().toUpperCase();
+       this.IdentificationReporter= sc.nextLine().trim();
        
        if(IdentificationReporter.isEmpty()){
            System.out.println("No puede dejar en blanco el número de cédula");
@@ -226,7 +226,7 @@ public class Pet {
              
        Three = true;
        System.out.print("Ingrese el nombre completo:");
-       this.FullName= sc.nextLine().trim().toUpperCase();
+       this.FullName= sc.nextLine().trim();
        
        if(FullName.isEmpty()){
            System.out.println("No puede dejar en blanco el nombre completo");
@@ -291,20 +291,20 @@ public class Pet {
          
          do{
        System.out.print("Ingrese la fecha del reporte(dd/MM/yyyy):");
-       this.ReportDate = sc.nextLine().trim().toUpperCase();
+       this.ReportDate = sc.nextLine().trim();
        
-       try {
+       if (ReportDate.isEmpty()){
+           this.ReportDate = LocalDate.now(). format(formato);
+       }else{
+          try {
              LocalDate.parse(ReportDate,formato);
              Five = true;
          }catch (DateTimeParseException e){
              System.out.println("Fecha inválida. Por favor, vuelva a intentarlo");
              Five = false;
-         }
-       
-       if (ReportDate.isEmpty()){
-           this.ReportDate = LocalDate.now(). format(formato);
+         } 
        }
-                 
+           
    }while (!Five);
    
          }
@@ -319,7 +319,7 @@ public class Pet {
              
        Six = true;
        System.out.print("Ingrese la zona:");
-       this.Zone = sc.nextLine().trim().toUpperCase();
+       this.Zone = sc.nextLine().trim();
             
        if (Zone.length()<= 30){
            Six = true;
@@ -375,7 +375,7 @@ public class Pet {
              
              Eight = true;
        System.out.print("Ingrese color principal:");
-       this.Color = sc.nextLine().trim().toUpperCase();
+       this.Color = sc.nextLine().trim();
        
        if (Color.isEmpty()){
            System.out.println("No puede dejar en blanco el color");
@@ -394,7 +394,7 @@ public class Pet {
          do{
        Nine = true;
        System.out.print("Ingrese señas particulares (mínimo 10 carácteres):");
-       this.ParticularSigns = sc.nextLine().trim().toUpperCase();
+       this.ParticularSigns = sc.nextLine().trim();
           
        if (ParticularSigns.length()>=10){
            Nine = true;
@@ -423,7 +423,7 @@ public class Pet {
              
        Ten = true;
        System.out.print("Ingrese teléfono de contacto (####-####):");
-       this.TelephoneNumber = sc.nextLine().trim().toUpperCase();
+       this.TelephoneNumber = sc.nextLine().trim();
        
        if (TelephoneNumber.isEmpty()){
            System.out.println ("No puede dejar el campo vacío");

@@ -36,13 +36,13 @@ public class Query {
 
         if (Selection == 1) {
             System.out.print("Digite el ID del reportante:");
-            Word = sc.nextLine().trim().toUpperCase();
+            Word = sc.nextLine().trim();
         } else if (Selection == 2) {
             System.out.print("Digie la especie (DOG/CAT:");
             Word = sc.nextLine().trim().toUpperCase();
         } else if (Selection == 3) {
             System.out.print("Digite la zona:");
-            Word = sc.nextLine().trim().toUpperCase();
+            Word = sc.nextLine().trim();
         } else {
             System.out.println("Opción inválida");
             return;
