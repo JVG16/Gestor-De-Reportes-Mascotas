@@ -8,7 +8,13 @@ Temas 1 y 2.
 Tercer cuatrimestre, 2025.
 
 Descripción: 
-El presente programa permitirá que el usuario administre de forma correcta 
+Huellas Felices es un refugio de mascotas. Se solicita crear una aplicación 
+llamada Gestor de Reporte de Mascotas. Esta aplicación tendrá múltiples opciones 
+dentro del menú, permitiendo al usuario realizar uno o varios registros, consultar 
+el reporte general y agrupado, visualizar si hay coincidencias y si fuera necesario,
+modificar algún dato o bien, reingresar todos los campos. De esta manera, el 
+programa se convertirá en una herramienta muy importante para llevar un registro
+más ordenado de las mascotas perdidas o encontradas en el refugio.
 
 
 Referencias:
@@ -31,7 +37,7 @@ import java.io.PrintStream;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
+
 
 /**
  *
@@ -41,10 +47,10 @@ public class GestorReporteMascotas {
 
     public static void main(String[] args) throws IOException {  
         
-        System.setOut(new PrintStream(System.out, true, StandardCharsets.UTF_8));
+        System.setOut(new PrintStream(System.out, true, StandardCharsets.UTF_8)); // Estrucutra necesaria para los carácteres.
         Menu menu = new Menu();
         int option;
-        boolean OrderExcecute = false;
+        boolean OrderExcecute = false; // Permite el orden de ejecución del programa.
 
         List<Pet> pets = new ArrayList<>(); // 
 

@@ -29,7 +29,7 @@ public class Pet {
     private String Microchip;
 
     
-    // Constructor.
+    // Constructores.
     
     public Pet(String IdentificationReport, String IdentificationReporter, String FullName, String TypeReport, String ReportDate, String Zone, String Species, String Color, String ParticularSigns, String TelephoneNumber, String Microchip) {
         this.IdentificationReport = IdentificationReport;
@@ -62,7 +62,7 @@ public class Pet {
         
     }
      
-    
+    // Getters y Setters.
 
     public String getIdentificationReport() {
         return IdentificationReport;

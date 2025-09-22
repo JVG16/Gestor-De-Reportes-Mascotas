@@ -49,7 +49,7 @@ public class Query {
         }
   
         boolean found = false;
-        for (Pet p : pets) {
+        for (Pet p : pets) { // Ciclo que recorre 
             boolean match = false;
 
             if (Selection == 1 && p.getIdentificationReporter().toUpperCase().equals(Word)) {
