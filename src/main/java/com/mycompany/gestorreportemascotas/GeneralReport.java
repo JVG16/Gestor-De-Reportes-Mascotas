@@ -12,8 +12,8 @@ import java.util.List;
  */
 public class GeneralReport {
 
-    public static void General (List<Pet> pets) {
-        
+    public static void General(List<Pet> pets) {
+
         System.out.println("\n");
         System.out.println("----------------------------------------------------");
         System.out.println("        REPORTE GENERAL DE MASCOTAS                 ");
@@ -23,16 +23,15 @@ public class GeneralReport {
 
         int Old = 0;
         for (Pet p : pets) {
-        System.out.printf("%-10s | %-18s | %-8s | %-8s | %-8s%n",
+            System.out.printf("%-10s | %-18s | %-8s | %-8s | %-8s%n",
                     p.getIdentificationReporter(), p.getFullName(), p.getReportDate(),
                     p.getZone(), p.getTypeReport());
             Old++;
         }
 
         System.out.println("----------------------------------------------------");
-        
+
         System.out.println("Total de Reportes:" + Old);
-        
 
     }
 }

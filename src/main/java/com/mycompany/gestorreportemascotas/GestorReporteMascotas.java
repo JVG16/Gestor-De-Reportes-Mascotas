@@ -31,13 +31,11 @@ Página web: https://www.ionos.com/es-us/digitalguide/paginas-web/desarrollo-web
 package com.mycompany.gestorreportemascotas;
 
 // Librerías necesarias para el desarrollo óptimo del programa.
-
 import java.io.IOException;
 import java.io.PrintStream;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
-
 
 /**
  *
@@ -45,8 +43,8 @@ import java.util.List;
  */
 public class GestorReporteMascotas {
 
-    public static void main(String[] args) throws IOException {  
-        
+    public static void main(String[] args) throws IOException {
+
         System.setOut(new PrintStream(System.out, true, StandardCharsets.UTF_8)); // Estrucutra necesaria para los carácteres.
         Menu menu = new Menu();
         int option;
@@ -57,9 +55,8 @@ public class GestorReporteMascotas {
         do {
             menu.SeeMenu(); // Muestra el menú.
             option = menu.leerOption();
-            
-            // Manejo de las opciones.
 
+            // Manejo de las opciones.
             switch (option) {
 
                 case 1: {
@@ -84,56 +81,51 @@ public class GestorReporteMascotas {
                 }
 
                 case 2: {
-                    
-                    if (OrderExcecute){
+
+                    if (OrderExcecute) {
                         Query.listOfQueries(pets);
-                    }
-                    else{
-                      System.out.println("Para continuar, primero debe completar el registro");
+                    } else {
+                        System.out.println("Para continuar, primero debe completar el registro");
                     }
                     break;
                 }
 
                 case 3: {
-                    
-                    if(OrderExcecute){
-                       GeneralReport.General(pets);
-                    }
-                    else{
-                        System.out.println ("Para continuar, primero debe completar el registro");
+
+                    if (OrderExcecute) {
+                        GeneralReport.General(pets);
+                    } else {
+                        System.out.println("Para continuar, primero debe completar el registro");
                     }
                     break;
                 }
 
                 case 4: {
-                    
-                    if(OrderExcecute){
-                     GroupedReport.Grouped(pets);  
-                    }
-                    else {
+
+                    if (OrderExcecute) {
+                        GroupedReport.Grouped(pets);
+                    } else {
                         System.out.println("Para continuar, primero debe completar el registro");
-                    }   
+                    }
                     break;
                 }
 
                 case 5: {
-                    
-                    if(OrderExcecute){
-                     MatchFound.Coincidences(pets);  
+
+                    if (OrderExcecute) {
+                        MatchFound.Coincidences(pets);
+                    } else {
+                        System.out.println("Para continuar, primero debe completar el registro");
                     }
-                    else {
-                      System.out.println("Para continuar, primero debe completar el registro");  
-                    }
-                    
+
                     break;
                 }
 
                 case 6: {
-                    
-                    if (OrderExcecute){
-                     UpdateReport.Update(pets);
-                    }
-                    else{
+
+                    if (OrderExcecute) {
+                        UpdateReport.Update(pets);
+                    } else {
                         System.out.println("Para continuar, primero debe completar el registro");
                     }
                     break;
