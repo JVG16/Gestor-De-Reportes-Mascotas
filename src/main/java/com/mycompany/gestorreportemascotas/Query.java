@@ -4,6 +4,7 @@
  */
 package com.mycompany.gestorreportemascotas;
 
+import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
 
@@ -15,33 +16,59 @@ public class Query {
 
     public static void listOfQueries(List<Pet> pets) {
         Scanner sc = new Scanner(System.in);
+        boolean Criteries = false;
+        int Selection = 0;
 
-        System.out.println("\n");
-        System.out.println(" -------------------------------------------------------------------------- ");
-        System.out.println("                       CONSULTA DE REPORTES POR CRITERIOS                   ");
-        System.out.println(" -------------------------------------------------------------------------- ");
-        System.out.println(" Seleccione criterio de búsqueda:");
-        System.out.println(" 1. ID del reportante ");
-        System.out.println(" 2. Especie ");
-        System.out.println(" 3. Zona ");
-        System.out.print(" Seleccione un criterio de búsqueda:");
-        int Selection = sc.nextInt();
-        sc.nextLine();
+        do {
+
+            System.out.println("\n");
+            System.out.println(" -------------------------------------------------------------------------- ");
+            System.out.println("                       CONSULTA DE REPORTES POR CRITERIOS                   ");
+            System.out.println(" -------------------------------------------------------------------------- ");
+            System.out.println(" Seleccione criterio de búsqueda:");
+            System.out.println(" 1. ID del reportante ");
+            System.out.println(" 2. Especie ");
+            System.out.println(" 3. Zona ");
+            System.out.print(" Seleccione un criterio de búsqueda:");
+
+            try {
+                Selection = sc.nextInt();
+                sc.nextLine();
+                if (Selection < 1 || Selection > 3) {
+                    System.out.println("Número seleccionado fuera del rango. Por favor, vuelva a intentarlo.");
+                    Criteries = false;
+                } else {
+                    System.out.println(" Criterio de búsqueda válido");
+                    Criteries = true;
+                }
+
+            } catch (InputMismatchException e) {
+                System.out.println("No debe ingresar carácteres.");
+                sc.nextLine();
+                Criteries = false;
+            }
+
+        } while (!Criteries);
 
         String Written = "";
 
         String Word = "";
 
         if (Selection == 1) {
+
+            System.out.println("\n");
             System.out.print("Digite el ID del reportante:");
             Word = sc.nextLine().trim().toUpperCase();
         } else if (Selection == 2) {
+            System.out.println("\n");
             System.out.print("Digie la especie (DOG/CAT:");
             Word = sc.nextLine().trim().toUpperCase();
         } else if (Selection == 3) {
+            System.out.println("\n");
             System.out.print("Digite la zona:");
             Word = sc.nextLine().trim().toUpperCase();
         } else {
+            System.out.println("\n");
             System.out.println("Opción inválida");
             return;
         }
@@ -50,11 +77,11 @@ public class Query {
         for (Pet p : pets) { // Ciclo que recorre 
             boolean match = false;
 
-            if (Selection == 1 && p.getIdentificationReporter().toUpperCase().equals(Word)) {
+            if (Selection == 1 && p.getIdentificationReporter().equals(Word)) {
                 match = true;
             } else if (Selection == 2 && p.getSpecies().toUpperCase().equals(Word)) {
                 match = true;
-            } else if (Selection == 3 && p.getZone().toUpperCase().equals(Word)) {
+            } else if (Selection == 3 && p.getZone().equals(Word)) {
                 match = true;
             }
 
@@ -63,12 +90,12 @@ public class Query {
 
                     System.out.println("\n");
                     System.out.println(" Resultados encontrados:");
-                    System.out.printf("%-10s | %-18s | %-8s | %-8s | %-8s%n",
+                    System.out.printf("%-10s | %-18s | %-8s | %-10s | %-8s%n",
                             "ID Reportante", "Nombre Completo", "Fecha", "Zona", "Tipo");
                 }
 
                 found = true;
-                System.out.printf("%-10s | %-18s | %-8s | %-8s | %-8s%n",
+                    System.out.printf("%-10s | %-18s | %-8s | %-10s | %-8s%n",
                         p.getIdentificationReporter(), p.getFullName(), p.getReportDate(),
                         p.getZone(), p.getTypeReport());
             }

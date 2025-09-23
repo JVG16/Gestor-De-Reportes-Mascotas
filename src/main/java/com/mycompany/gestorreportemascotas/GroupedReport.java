@@ -43,6 +43,7 @@ public class GroupedReport {
                 Cat++;
             }
         }
+        System.out.println("\n");
         System.out.println("Conteo por especie:");
         System.out.println("DOG:" + Dog);
         System.out.println("CAT:" + Cat);
