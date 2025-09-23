@@ -4,6 +4,7 @@
  */
 package com.mycompany.gestorreportemascotas;
 
+import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
 
@@ -15,7 +16,12 @@ public class Query {
 
     public static void listOfQueries(List<Pet> pets) {
         Scanner sc = new Scanner(System.in);
+        boolean Criteries  = false;
+        int Selection = 0;
 
+        do{
+            
+        
         System.out.println("\n");
         System.out.println(" -------------------------------------------------------------------------- ");
         System.out.println("                       CONSULTA DE REPORTES POR CRITERIOS                   ");
@@ -25,9 +31,22 @@ public class Query {
         System.out.println(" 2. Especie ");
         System.out.println(" 3. Zona ");
         System.out.print(" Seleccione un criterio de búsqueda:");
-        int Selection = sc.nextInt();
-        sc.nextLine();
-
+        
+        try{
+            Selection = sc.nextInt(); 
+                    sc.nextLine();
+                    if (Selection < 1 || Selection > 3){
+                        System.out.println("Número seleccionado fuera del rango. Por favor, vuelva a intentarlo.");
+                        Criteries = false;
+                    }
+        }catch (InputMismatchException e){
+            System.out.println("No debe ingresar carácteres.");
+            sc.nextLine();
+            Criteries = false;
+        }
+        
+        }while(!Criteries);
+        
         String Written = "";
 
         String Word = "";
@@ -50,11 +69,11 @@ public class Query {
         for (Pet p : pets) { // Ciclo que recorre 
             boolean match = false;
 
-            if (Selection == 1 && p.getIdentificationReporter().toUpperCase().equals(Word)) {
+            if (Selection == 1 && p.getIdentificationReporter().equals(Word)) {
                 match = true;
             } else if (Selection == 2 && p.getSpecies().toUpperCase().equals(Word)) {
                 match = true;
-            } else if (Selection == 3 && p.getZone().toUpperCase().equals(Word)) {
+            } else if (Selection == 3 && p.getZone().equals(Word)) {
                 match = true;
             }
 

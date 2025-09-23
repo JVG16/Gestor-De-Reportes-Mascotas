@@ -229,6 +229,13 @@ public class Pet {
                 System.out.println("El nombre debe contener como mínimo 7 carácteres");
                 Three = false;
             }
+            
+            for (int i = 0; i < FullName.length();i++){
+               char c = FullName.charAt(i);
+              if (Character.isDigit(c)){
+                  System.out.println("El nombre debe contener números.");
+              }       
+            }
 
         } while (!Three);
 
@@ -266,6 +273,7 @@ public class Pet {
     }
 
     // Validaciones para la Fecha.
+    
     public void Date() {
         Scanner sc = new Scanner(System.in);
         boolean Five = true;
@@ -275,17 +283,17 @@ public class Pet {
         do {
             System.out.print("Ingrese la fecha del reporte(dd/MM/yyyy):");
             this.ReportDate = sc.nextLine().trim().toUpperCase();
-
+            
+            if (ReportDate.isEmpty()) {
+                this.ReportDate = LocalDate.now().format(formato);
+            }
+  
             try {
                 LocalDate.parse(ReportDate, formato);
                 Five = true;
             } catch (DateTimeParseException e) {
                 System.out.println("Fecha inválida. Por favor, vuelva a intentarlo");
                 Five = false;
-            }
-
-            if (ReportDate.isEmpty()) {
-                this.ReportDate = LocalDate.now().format(formato);
             }
 
         } while (!Five);
@@ -354,11 +362,22 @@ public class Pet {
             Eight = true;
             System.out.print("Ingrese color principal:");
             this.Color = sc.nextLine().trim().toUpperCase();
+            
+            for (int i = 0; i < Color.length();i++){
+            char Letter = Color.charAt(i);
+            if (Character.isDigit(Letter)){
+                System.out.println("El color no debería de presentar números");
+            }
+                    
+        }
+            
 
             if (Color.isEmpty()) {
-                System.out.println("No puede dejar en blanco el color");
+                System.out.println("No puede dejar vacío el color");
                 Eight = false;
             }
+            
+            
         } while (this.Color == null);
 
     }
