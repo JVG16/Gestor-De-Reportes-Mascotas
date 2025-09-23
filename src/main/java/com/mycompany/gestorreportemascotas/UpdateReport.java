@@ -73,7 +73,7 @@ public class UpdateReport {
             System.out.println("6.Señas particulares");
             System.out.println("7.Teléfono de contacto");
             System.out.println("8.Microchip");
-            System.out.print("Seleccione una de las opciones");
+            System.out.print("Seleccione una de las opciones:");
             int Edit = sc.nextInt();
             sc.nextLine();
 

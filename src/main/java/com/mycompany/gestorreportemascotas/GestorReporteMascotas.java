@@ -57,12 +57,13 @@ public class GestorReporteMascotas {
             option = menu.leerOption();
 
             // Manejo de las opciones.
+            
             switch (option) {
 
                 case 1: {
 
                     Pet AA = new Pet();
-                    AA.IdentReport();
+                    AA.IdentReport(pets);
                     AA.IdentReporter();
                     AA.Name();
                     AA.Report();

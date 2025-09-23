@@ -7,6 +7,7 @@ package com.mycompany.gestorreportemascotas;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
+import java.util.List;
 import java.util.Scanner;
 
 /**
@@ -148,7 +149,7 @@ public class Pet {
     }
 
     // Validaciones ID del Reporte.
-    public void IdentReport() {
+    public void IdentReport(List<Pet> pets ) {
 
         System.out.println("\n");
         System.out.println("--------------------------------------------------");
@@ -173,6 +174,13 @@ public class Pet {
             } else if (!IdentificationReport.substring(4).matches("\\d{4}")) {
                 System.out.println("No puede ingresar carácteres");
                 One = false;
+            }
+            
+            for(Pet p: pets){
+                if(p.getIdentificationReport().equals(this.IdentificationReport)){
+                    System.out.println("El ID de reporte debe ser único");
+                    One = false;
+                }
             }
         } while (!One);
     }
@@ -229,12 +237,13 @@ public class Pet {
                 System.out.println("El nombre debe contener como mínimo 7 carácteres");
                 Three = false;
             }
-            
-            for (int i = 0; i < FullName.length();i++){
-               char c = FullName.charAt(i);
-              if (Character.isDigit(c)){
-                  System.out.println("El nombre debe contener números.");
-              }       
+
+            for (int i = 0; i < FullName.length(); i++) {
+                char c = FullName.charAt(i);
+                if (Character.isDigit(c)) {
+                    System.out.println("El nombre no debe contener números.");
+                    Three = false;
+                }
             }
 
         } while (!Three);
@@ -273,7 +282,6 @@ public class Pet {
     }
 
     // Validaciones para la Fecha.
-    
     public void Date() {
         Scanner sc = new Scanner(System.in);
         boolean Five = true;
@@ -283,11 +291,11 @@ public class Pet {
         do {
             System.out.print("Ingrese la fecha del reporte(dd/MM/yyyy):");
             this.ReportDate = sc.nextLine().trim().toUpperCase();
-            
+
             if (ReportDate.isEmpty()) {
                 this.ReportDate = LocalDate.now().format(formato);
             }
-  
+
             try {
                 LocalDate.parse(ReportDate, formato);
                 Five = true;
@@ -315,6 +323,11 @@ public class Pet {
                 Six = true;
             } else {
                 System.out.println("El texto debe contener como máximo 30 carácteres");
+                Six = false;
+            }
+
+            if (Zone.matches("\\d+")) {
+                System.out.println("La zona no puede tener solo números");
                 Six = false;
             }
 
@@ -362,23 +375,23 @@ public class Pet {
             Eight = true;
             System.out.print("Ingrese color principal:");
             this.Color = sc.nextLine().trim().toUpperCase();
-            
-            for (int i = 0; i < Color.length();i++){
-            char Letter = Color.charAt(i);
-            if (Character.isDigit(Letter)){
-                System.out.println("El color no debería de presentar números");
-            }
-                    
-        }
-            
 
             if (Color.isEmpty()) {
                 System.out.println("No puede dejar vacío el color");
                 Eight = false;
             }
-            
-            
-        } while (this.Color == null);
+
+            for (int i = 0; i < Color.length(); i++) {
+                char Letter = Color.charAt(i);
+                if (Character.isDigit(Letter)) {
+                    System.out.println("El color no debería de presentar números");
+                    Eight = false;
+                    break;
+                }
+
+            }
+
+        } while (!Eight);
 
     }
 
@@ -404,6 +417,11 @@ public class Pet {
                 Nine = false;
             }
 
+            if (ParticularSigns.matches("\\d+")) {
+                System.out.println("Las señas no pueden tener solo números");
+                Nine = false;
+            }
+
         } while (!Nine);
 
     }
@@ -421,11 +439,6 @@ public class Pet {
 
             if (TelephoneNumber.isEmpty()) {
                 System.out.println("No puede dejar el campo vacío");
-                Ten = false;
-            }
-
-            if (TelephoneNumber.charAt(4) != '-') {
-                System.out.println("El formato del teléfono de contacto es incorrecto. Por favor, vuelva a intentarlo.");
                 Ten = false;
             }
 
