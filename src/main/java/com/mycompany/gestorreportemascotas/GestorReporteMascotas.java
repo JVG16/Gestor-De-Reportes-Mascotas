@@ -31,11 +31,12 @@ Página web: https://www.ionos.com/es-us/digitalguide/paginas-web/desarrollo-web
 package com.mycompany.gestorreportemascotas;
 
 // Librerías necesarias para el desarrollo óptimo del programa.
-import java.io.IOException;
+
 import java.io.PrintStream;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 /**
  *
@@ -43,9 +44,10 @@ import java.util.List;
  */
 public class GestorReporteMascotas {
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args){
 
         System.setOut(new PrintStream(System.out, true, StandardCharsets.UTF_8)); // Estrucutra necesaria para los carácteres.
+        Scanner sc = new Scanner(System.in);
         Menu menu = new Menu();
         int option;
         boolean OrderExcecute = false; // Permite el orden de ejecución del programa.
@@ -60,7 +62,7 @@ public class GestorReporteMascotas {
             
             switch (option) {
 
-                case 1: {
+                case 1 ->  {
 
                     Pet AA = new Pet();
                     AA.IdentReport(pets);
@@ -77,67 +79,73 @@ public class GestorReporteMascotas {
 
                     pets.add(AA);
                     OrderExcecute = true;
+                    System.out.println("Registro completado con éxito");
+                    System.out.println("Presione la tecla Enter para continuar con el programa");
+                    sc.nextLine();
                     break;
-
                 }
 
-                case 2: {
+                case 2 ->  {
 
                     if (OrderExcecute) {
                         Query.listOfQueries(pets);
                     } else {
                         System.out.println("Para continuar, primero debe completar el registro");
                     }
-                    break;
+                    System.out.println("Presione la tecla Enter para continuar con el programa");
+                    sc.nextLine();
                 }
 
-                case 3: {
+                case 3 ->  {
 
                     if (OrderExcecute) {
                         GeneralReport.General(pets);
                     } else {
                         System.out.println("Para continuar, primero debe completar el registro");
                     }
-                    break;
+                    System.out.println("Presione la tecla Enter para continuar con el programa");
+                    sc.nextLine();
                 }
 
-                case 4: {
+                case 4 ->  {
 
                     if (OrderExcecute) {
                         GroupedReport.Grouped(pets);
                     } else {
                         System.out.println("Para continuar, primero debe completar el registro");
                     }
-                    break;
+                    System.out.println("Presione la tecla Enter para continuar con el programa");
+                    sc.nextLine();
                 }
 
-                case 5: {
+                case 5 ->  {
 
                     if (OrderExcecute) {
                         MatchFound.Coincidences(pets);
                     } else {
                         System.out.println("Para continuar, primero debe completar el registro");
                     }
-
-                    break;
+                    System.out.println("Presione la tecla Enter para continuar con el programa");
+                    sc.nextLine();
                 }
 
-                case 6: {
+                case 6 ->  {
 
                     if (OrderExcecute) {
                         UpdateReport.Update(pets);
                     } else {
                         System.out.println("Para continuar, primero debe completar el registro");
                     }
-                    break;
+                    System.out.println("Presione la tecla Enter para continuar con el programa");
+                    sc.nextLine();
                 }
 
-                case 7: {
+                case 7 ->  {
                     System.out.println("Le agradecemos su aporte.");
-                    break;
+                    System.out.println("Presione la tecla Enter para continuar con el programa");
+                    sc.nextLine();
                 }
-
-                default: {
+                default -> {
                     System.out.println(" Opción inválida, por favor vuelva a intentarlo. ");
                 }
 
@@ -146,3 +154,4 @@ public class GestorReporteMascotas {
 
     }
 }
+

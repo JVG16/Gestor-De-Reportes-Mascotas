@@ -264,7 +264,7 @@ public class Pet {
 
         do {
             Four = true;
-            System.out.println("Tipo de reporte (PDR/ENC):");
+            System.out.print("Tipo de reporte (PDR/ENC):");
             String Modify = sc.nextLine().toUpperCase();
             if (Modify.equals("PDR") || Modify.equals("ENC")) {
                 this.TypeReport = Modify;

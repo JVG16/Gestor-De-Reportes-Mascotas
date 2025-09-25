@@ -50,27 +50,29 @@ public class Query {
 
         } while (!Criteries);
 
-        String Written = "";
-
         String Word = "";
 
-        if (Selection == 1) {
-
-            System.out.println("\n");
-            System.out.print("Digite el ID del reportante:");
-            Word = sc.nextLine().trim().toUpperCase();
-        } else if (Selection == 2) {
-            System.out.println("\n");
-            System.out.print("Digie la especie (DOG/CAT:");
-            Word = sc.nextLine().trim().toUpperCase();
-        } else if (Selection == 3) {
-            System.out.println("\n");
-            System.out.print("Digite la zona:");
-            Word = sc.nextLine().trim().toUpperCase();
-        } else {
-            System.out.println("\n");
-            System.out.println("Opción inválida");
-            return;
+        switch (Selection) {
+            case 1 -> {
+                System.out.println("\n");
+                System.out.print("Digite el ID del reportante:");
+                Word = sc.nextLine().trim().toUpperCase();
+            }
+            case 2 -> {
+                System.out.println("\n");
+                System.out.print("Digie la especie (DOG/CAT:");
+                Word = sc.nextLine().trim().toUpperCase();
+            }
+            case 3 -> {
+                System.out.println("\n");
+                System.out.print("Digite la zona:");
+                Word = sc.nextLine().trim().toUpperCase();
+            }
+            default -> {
+                System.out.println("\n");
+                System.out.println("Opción inválida");
+                return;
+            }
         }
 
         boolean found = false;
@@ -90,12 +92,12 @@ public class Query {
 
                     System.out.println("\n");
                     System.out.println(" Resultados encontrados:");
-                    System.out.printf("%-10s | %-18s | %-8s | %-10s | %-8s%n",
+                    System.out.printf("%-10s | %-18s | %-10s | %-10s | %-8s%n",
                             "ID Reportante", "Nombre Completo", "Fecha", "Zona", "Tipo");
                 }
 
                 found = true;
-                    System.out.printf("%-10s | %-18s | %-8s | %-10s | %-8s%n",
+                    System.out.printf("%-10s | %-18s | %-10s | %-10s | %-8s%n",
                         p.getIdentificationReporter(), p.getFullName(), p.getReportDate(),
                         p.getZone(), p.getTypeReport());
             }
@@ -103,12 +105,12 @@ public class Query {
 
         if (!found) {
 
-            if (Selection == 1) {
-                System.out.print("Cédula no encontrada.");
-            } else if (Selection == 2) {
-                System.out.print("Especie no encontrada.");
-            } else if (Selection == 3) {
-                System.out.print("Zona no encontrada.");
+            switch (Selection) {
+                case 1 -> System.out.print("Cédula no encontrada.");
+                case 2 -> System.out.print("Especie no encontrada.");
+                case 3 -> System.out.print("Zona no encontrada.");
+                default -> {
+                }
             }
         }
     }
