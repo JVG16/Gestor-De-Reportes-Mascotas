@@ -1,6 +1,13 @@
 
 /*
-En esta clase se trabaja la parte del menú, 
+
+Descripción: 
+
+En esta clase se declara el menú con sus múltiples opciones. El usuario deberá
+ingresar los datos solicitados. En dado caso de que el usuario digite una opción 
+que no esté incluida en el menú, el programa deberá mostrar un mensaje en 
+pantalla de error.
+
 */
 
 /*
@@ -32,7 +39,7 @@ public class Menu {
 }
 
    public int leerOption (){
-     System.out.println(" Ingrese la opción ");  
+     System.out.print(" Ingrese la opción: ");  
      return sc.nextInt();
    }
    }

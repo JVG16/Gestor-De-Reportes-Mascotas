@@ -1,4 +1,19 @@
 /*
+
+Descripción:
+
+En esta clase primeramente se solicita seleecionar un criterio de búsqueda que
+contiene únicamente tres opciones a elegir. En caso de que el usuario digite una
+opción diferente a las determinadas, se deberá mostrar en pantalla un mensaje de 
+error. Se deberá mostrar en pantalla un reporte en caso de que el criterio de 
+búsqueda seleecionado y su respectivo formato sea el correcto.
+
+Implementaciones relevantes:
+
+Try Catch con el fin de no permitir el ingreso de carácteres dentro de la selección
+del criterio de búsqueda.
+El ciclo For recorre los valores para mostrarlos en pantalla.
+
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
@@ -25,7 +40,7 @@ public class Query {
             System.out.println(" -------------------------------------------------------------------------- ");
             System.out.println("                       CONSULTA DE REPORTES POR CRITERIOS                   ");
             System.out.println(" -------------------------------------------------------------------------- ");
-            System.out.println(" Seleccione criterio de búsqueda:");
+            System.out.println("Seleccione criterio de búsqueda:");
             System.out.println(" 1. ID del reportante ");
             System.out.println(" 2. Especie ");
             System.out.println(" 3. Zona ");
@@ -38,7 +53,7 @@ public class Query {
                     System.out.println("Número seleccionado fuera del rango. Por favor, vuelva a intentarlo.");
                     Criteries = false;
                 } else {
-                    System.out.println(" Criterio de búsqueda válido");
+                    System.out.println(" Criterio de búsqueda válido.");
                     Criteries = true;
                 }
 
@@ -56,7 +71,7 @@ public class Query {
             case 1 -> {
                 System.out.println("\n");
                 System.out.print("Digite el ID del reportante:");
-                Word = sc.nextLine().trim().toUpperCase();
+                Word = sc.nextLine().trim();
             }
             case 2 -> {
                 System.out.println("\n");
@@ -66,17 +81,17 @@ public class Query {
             case 3 -> {
                 System.out.println("\n");
                 System.out.print("Digite la zona:");
-                Word = sc.nextLine().trim().toUpperCase();
+                Word = sc.nextLine().trim();
             }
             default -> {
                 System.out.println("\n");
-                System.out.println("Opción inválida");
+                System.out.println("Opción inválida.");
                 return;
             }
         }
 
         boolean found = false;
-        for (Pet p : pets) { // Ciclo que recorre 
+        for (Pet p : pets) {  
             boolean match = false;
 
             if (Selection == 1 && p.getIdentificationReporter().equals(Word)) {

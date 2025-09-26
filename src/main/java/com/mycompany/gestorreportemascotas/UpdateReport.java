@@ -1,4 +1,13 @@
 /*
+
+Descripción:
+
+En esta clase, el usuario tendrá la oportunidad de modificar algún dato o bien,
+reingesar todos los datos, pero primero, deberá ingresar el ID del reporte. En 
+caso de que el ID no haya sido previamente ingresado, no podrá continuar con el
+proceso. En caso contrario, el usaurio tendrá dos opciones actualizar ya sea un 
+uno o todos los datos.
+
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
@@ -147,7 +156,6 @@ public class UpdateReport {
             case 2 -> {
                 System.out.println("Reingresar todos los datos");
                 System.out.println("\n");
-                found.IdentReporter();
                 found.Name();
                 found.ModifyReport();
                 found.Place();
