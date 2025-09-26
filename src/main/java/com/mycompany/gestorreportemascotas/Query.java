@@ -91,7 +91,7 @@ public class Query {
         }
 
         boolean found = false;
-        for (Pet p : pets) {  
+        for (Pet p : pets) {
             boolean match = false;
 
             if (Selection == 1 && p.getIdentificationReporter().equals(Word)) {
@@ -107,12 +107,13 @@ public class Query {
 
                     System.out.println("\n");
                     System.out.println(" Resultados encontrados:");
-                    System.out.printf("%-10s | %-18s | %-10s | %-10s | %-8s%n",
+                    System.out.printf("  %-11s   |    %-15s    |    %-6s    |   %-6s    |    %-4s%n   ",
                             "ID Reportante", "Nombre Completo", "Fecha", "Zona", "Tipo");
+                    System.out.println(" ------------------------------------------------------------ ");
                 }
 
                 found = true;
-                    System.out.printf("%-10s | %-18s | %-10s | %-10s | %-8s%n",
+                System.out.printf("%-11s | %-18s | %-10s | %-10s | %-3s%n",
                         p.getIdentificationReporter(), p.getFullName(), p.getReportDate(),
                         p.getZone(), p.getTypeReport());
             }
@@ -121,9 +122,12 @@ public class Query {
         if (!found) {
 
             switch (Selection) {
-                case 1 -> System.out.print("Cédula no encontrada.");
-                case 2 -> System.out.print("Especie no encontrada.");
-                case 3 -> System.out.print("Zona no encontrada.");
+                case 1 ->
+                    System.out.print("Cédula no encontrada.");
+                case 2 ->
+                    System.out.print("Especie no encontrada.");
+                case 3 ->
+                    System.out.print("Zona no encontrada.");
                 default -> {
                 }
             }

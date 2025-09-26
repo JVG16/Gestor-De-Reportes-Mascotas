@@ -85,7 +85,7 @@ public class UpdateReport {
                 System.out.print("Seleccione una de las opciones:");
                 int Edit = sc.nextInt();
                 sc.nextLine();
-                
+
                 switch (Edit) {
                     case 1 -> {
                         System.out.print("Nuevo nombre completo:");
@@ -94,14 +94,14 @@ public class UpdateReport {
                         System.out.println("----------------------------------------------------------------------");
                         System.out.println("Edición Exitosa: Nombre completo actualizado a :" + found.getFullName());
                     }
-                    
+
                     case 2 -> {
                         found.ModifyReport();
                         System.out.println("\n");
                         System.out.println("------------------------------------------------------------------------");
                         System.out.println("Edición Exitosa: Tipo de reporte actualizado a :" + found.getTypeReport());
                     }
-                    
+
                     case 3 -> {
                         System.out.print("Nueva zona:");
                         found.setZone(sc.nextLine());
@@ -109,7 +109,7 @@ public class UpdateReport {
                         System.out.println("-------------------------------------------------------");
                         System.out.println("Edición Exitosa: Zona actualizada a :" + found.getZone());
                     }
-                    
+
                     case 4 -> {
                         System.out.print("Nueva especie (DOG/CAT):");
                         found.setSpecies(sc.nextLine());
@@ -117,7 +117,7 @@ public class UpdateReport {
                         System.out.println("---------------------------------------------------------------------");
                         System.out.println("Edición Exitosa: Eipo de esoecie actualizado a :" + found.getSpecies());
                     }
-                    
+
                     case 5 -> {
                         System.out.print("Nuevo color principal:");
                         found.setColor(sc.nextLine());
@@ -125,7 +125,7 @@ public class UpdateReport {
                         System.out.println("---------------------------------------------------------");
                         System.out.println("Edición Exitosa: Color actualizado a :" + found.getColor());
                     }
-                    
+
                     case 6 -> {
                         System.out.print("Nuevas señas particulares:");
                         found.setParticularSigns(sc.nextLine());
@@ -133,7 +133,7 @@ public class UpdateReport {
                         System.out.println("---------------------------------------------------------------------------------");
                         System.out.println("Edición Exitosa: Señas particulares actualizadas a :" + found.getParticularSigns());
                     }
-                    
+
                     case 7 -> {
                         System.out.print("Nuevo número de teléfono:");
                         found.setTelephoneNumber(sc.nextLine());
@@ -141,7 +141,7 @@ public class UpdateReport {
                         System.out.println("--------------------------------------------------------------------------------");
                         System.out.println("Edición Exitosa: Número de teléfono actualizado a :" + found.getTelephoneNumber());
                     }
-                    
+
                     case 8 -> {
                         System.out.print("Nuevo microchip");
                         System.out.println("\n");
@@ -149,8 +149,9 @@ public class UpdateReport {
                         System.out.println("Edición Exitosa: Microchip actualizado a :" + found.getMicrochip());
                         found.setMicrochip(sc.nextLine());
                     }
-                    
-                    default -> System.out.println("Opción inválida");
+
+                    default ->
+                        System.out.println("Opción inválida");
                 }
             }
             case 2 -> {
@@ -164,7 +165,8 @@ public class UpdateReport {
                 found.Signs();
                 found.Phone();
             }
-            default -> System.out.println("Opción inválida");
+            default ->
+                System.out.println("Opción inválida");
         }
     }
 }

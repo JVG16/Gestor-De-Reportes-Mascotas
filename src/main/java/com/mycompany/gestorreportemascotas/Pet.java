@@ -1,4 +1,12 @@
 /*
+
+Descripción:
+
+En esta clase, se declaran los atributos. Es un paso muy importante ya que esos 
+atributos serán claves en todo el proceso del registro. En la misma, se realizarán
+las respectivas validaciones.
+
+
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
@@ -15,6 +23,8 @@ import java.util.Scanner;
  * @author Jimena
  */
 public class Pet {
+    
+    // Declaración de atributos.
 
     private String IdentificationReport;
     private String IdentificationReporter;
@@ -28,27 +38,16 @@ public class Pet {
     private String TelephoneNumber;
     private String Microchip;
 
-    // Constructores.
-    public Pet(String IdentificationReport, String IdentificationReporter, String FullName, String TypeReport, String ReportDate, String Zone, String Species, String Color, String ParticularSigns, String TelephoneNumber, String Microchip) {
-        this.IdentificationReport = IdentificationReport;
-        this.IdentificationReporter = IdentificationReporter;
-        this.FullName = FullName;
-        this.TypeReport = TypeReport;
-        this.ReportDate = ReportDate;
-        this.Zone = Zone;
-        this.Species = Species;
-        this.Color = Color;
-        this.ParticularSigns = ParticularSigns;
-        this.TelephoneNumber = TelephoneNumber;
-        this.Microchip = Microchip;
-    }
-
+    
+    
     public Pet() {
 
+        // Constructores.
+        
         this.IdentificationReport = "";
         this.IdentificationReporter = "";
         this.FullName = "";
-        this.TypeReport = "PDR";
+        this.TypeReport = "PDR"; // A diferencia de los demás, este por defecto debe ser PDR.
         this.ReportDate = "";
         this.Zone = "";
         this.Species = "";
@@ -60,6 +59,7 @@ public class Pet {
     }
 
     // Getters y Setters.
+    
     public String getIdentificationReport() {
         return IdentificationReport;
     }
@@ -148,8 +148,11 @@ public class Pet {
         this.Microchip = Microchip;
     }
 
-    // Validaciones ID del Reporte.
-    public void IdentReport(List<Pet> pets ) {
+    // Métodos.
+    
+    // Validaciones para el ID de Reporte.
+     
+    public void IdentReport(List<Pet> pets) {
 
         System.out.println("\n");
         System.out.println("--------------------------------------------------");
@@ -175,9 +178,9 @@ public class Pet {
                 System.out.println("No puede ingresar carácteres posterior al prefijo (REP-). Por favor, vuelva a intentarlo.");
                 One = false;
             }
-            
-            for(Pet p: pets){
-                if(p.getIdentificationReport().equals(this.IdentificationReport)){
+
+            for (Pet p : pets) {
+                if (p.getIdentificationReport().equals(this.IdentificationReport)) {
                     System.out.println("El ID de reporte debe ser único. Por favor, ingrese uno nuevo. ");
                     One = false;
                 }
@@ -186,6 +189,7 @@ public class Pet {
     }
 
     // Validaciones para el ID del Reportante.
+    
     public void IdentReporter() {
         Scanner sc = new Scanner(System.in);
         boolean Two;
@@ -216,6 +220,7 @@ public class Pet {
     }
 
     // Validaciones para el Nombre.
+    
     public void Name() {
         Scanner sc = new Scanner(System.in);
         boolean Three;
@@ -237,27 +242,32 @@ public class Pet {
                 System.out.println("El nombre debe de contener como mínimo 7 carácteres. Por favor, vuelva a intentarlo.");
                 Three = false;
             }
-
+            boolean Numbers = false;
             for (int i = 0; i < FullName.length(); i++) {
                 char c = FullName.charAt(i);
                 if (Character.isDigit(c)) {
-                    System.out.println("El nombre no debe contener números, solo carácteres. Por favor, vuelva a intentarlo.");
-                    Three = false;
+                    Numbers = true;
+                    break;
                 }
             }
-
+            if (Numbers) {
+                System.out.println("El nombre no debe contener números, solo carácteres.Por favor, vuelba a intentarlo.");
+                Three = false;
+            }
         } while (!Three);
 
     }
 
     // Tipo de Reporte.
+    
     public void Report() {
         Scanner sc = new Scanner(System.in);
         this.TypeReport = "PDR";
         System.out.println("Ingrese el tipo de reporte (PDR/ENC)[Por defecto PDR]:" + this.TypeReport);
     }
 
-    // Validaciones por el tipo de Reporte
+    // Validaciones por el tipo de Reporte.
+    
     public void ModifyReport() {
         Scanner sc = new Scanner(System.in);
         boolean Four;
@@ -282,6 +292,7 @@ public class Pet {
     }
 
     // Validaciones para la Fecha.
+    
     public void Date() {
         Scanner sc = new Scanner(System.in);
         boolean Five = true;
@@ -309,6 +320,7 @@ public class Pet {
     }
 
     // Validaciones para la Zona.
+    
     public void Place() {
         Scanner sc = new Scanner(System.in);
         boolean Six;
@@ -341,6 +353,7 @@ public class Pet {
     }
 
     // Validaciones tipo de Especie.
+    
     public void Animal() {
         Scanner sc = new Scanner(System.in);
         boolean Seven;
@@ -367,6 +380,7 @@ public class Pet {
     }
 
     // Validaciones por el Color.
+    
     public void Aspect() {
         Scanner sc = new Scanner(System.in);
         boolean Eight;
@@ -380,20 +394,20 @@ public class Pet {
                 System.out.println("No puede dejar vacío el color. Por favor, complete el espacio.");
                 Eight = false;
             }
-            
+
             boolean Characters = false;
             for (int i = 0; i < Color.length(); i++) {
                 char Letter = Color.charAt(i);
                 if (Character.isDigit(Letter)) {
                     Characters = true;
                     break;
-                    
+
                 }
 
             }
-            
-            if (Characters){
-                System.out.println ("El color no debería de presentar números. Por favor, vuelva a intentarlo.");
+
+            if (Characters) {
+                System.out.println("El color no debería de presentar números. Por favor, vuelva a intentarlo.");
                 Eight = false;
             }
 
@@ -402,6 +416,7 @@ public class Pet {
     }
 
     // Validaciones de las Señas.
+    
     public void Signs() {
         Scanner sc = new Scanner(System.in);
         boolean Nine;
@@ -433,6 +448,7 @@ public class Pet {
     }
 
     // Validaciones Teléfono.
+    
     public void Phone() {
         Scanner sc = new Scanner(System.in);
         boolean Ten;
