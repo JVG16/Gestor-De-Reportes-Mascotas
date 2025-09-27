@@ -24,7 +24,7 @@ public class GeneralReport {
         System.out.println("---------------------------------------------------------------");
         System.out.println("                   REPORTE GENERAL DE MASCOTAS                 ");
         System.out.println("---------------------------------------------------------------");
-        System.out.printf("  %-11s   |  %-15s  |  %-6s   |  %-6s  | %-4s%n ",
+        System.out.printf("  %-11s   |  %-15s  |  %-6s  | %-6s | %-4s%n ",
                 "ID Reportante", "Nombre Completo", "Fecha", "Zona", "Tipo");
         System.out.println("---------------------------------------------------------------");
 
