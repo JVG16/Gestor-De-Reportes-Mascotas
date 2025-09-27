@@ -1,4 +1,11 @@
 /*
+
+Descripción:
+
+En esta clase se trabaja con el tipo de reporte (PDR/ ENC). Es de suma importancia
+debido a que se realiza la respectiva clasificación basado en los registros 
+completados.
+
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */

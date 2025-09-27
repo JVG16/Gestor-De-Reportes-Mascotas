@@ -1,4 +1,11 @@
 /*
+
+Descripción:
+
+En esta clase por medio del tipo de reporte ( PDR/ ENC), se debe relizar el reporte
+de coincidencias encontradas.Se debe validar que existan como míninimo dos coincidencias
+para que se elabore y se muestre en pantalla el reporte.
+
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */

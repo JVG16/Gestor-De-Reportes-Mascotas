@@ -24,7 +24,7 @@ Presentación Progrmación intermedia Tema II: https://aprende.uned.ac.cr/plugin
 Canal de YouTube: https://www.youtube.com/watch?v=TDc2u-3EP3Q&ab_channel=%D0%A4%D0%B5%D0%B4%D0%BE%D1%82%D0%A8%D0%BC%D0%B0%D0%BA%D0%BE%D0%B2 
 Página web: https://www.ibm.com/docs/es/i/7.4.0?topic=java-code-examples
 Página web: https://www.ionos.com/es-us/digitalguide/paginas-web/desarrollo-web/java-variables/ 
-
+Página web: https://www-javahandbook-com.translate.goog/java-strings/string-formatting-in-java-s-d-f/?_x_tr_sl=en&_x_tr_tl=es&_x_tr_hl=es&_x_tr_pto=rq
 
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  */
@@ -44,7 +44,7 @@ import java.util.Scanner;
  */
 public class GestorReporteMascotas {
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
 
         System.setOut(new PrintStream(System.out, true, StandardCharsets.UTF_8)); // Estrucutra necesaria para los carácteres.
         Scanner sc = new Scanner(System.in);
@@ -59,10 +59,9 @@ public class GestorReporteMascotas {
             option = menu.leerOption();
 
             // Manejo de las opciones.
-            
             switch (option) {
 
-                case 1 ->  {
+                case 1 -> {
 
                     Pet AA = new Pet();
                     AA.IdentReport(pets);
@@ -79,79 +78,84 @@ public class GestorReporteMascotas {
 
                     pets.add(AA);
                     OrderExcecute = true;
+                    
                     System.out.println("Registro completado con éxito");
-                    System.out.println("Presione la tecla Enter para continuar con el programa");
+                    System.out.println("\n");
+                    System.out.println("Presione la tecla Enter para continuar con el programa.");
                     sc.nextLine();
                     break;
                 }
 
-                case 2 ->  {
+                case 2 -> {
 
                     if (OrderExcecute) {
                         Query.listOfQueries(pets);
                     } else {
-                        System.out.println("Para continuar, primero debe completar el registro");
+                        System.out.println("Para continuar, primero debe completar el registro.");
                     }
-                    System.out.println("Presione la tecla Enter para continuar con el programa");
+                    System.out.println("\n");
+                    System.out.println("Presione la tecla Enter para continuar con el programa.");
                     sc.nextLine();
                 }
 
-                case 3 ->  {
+                case 3 -> {
 
                     if (OrderExcecute) {
                         GeneralReport.General(pets);
                     } else {
-                        System.out.println("Para continuar, primero debe completar el registro");
+                        System.out.println("Para continuar, primero debe completar el registro.");
                     }
-                    System.out.println("Presione la tecla Enter para continuar con el programa");
+                    System.out.println("\n");
+                    System.out.println("Presione la tecla Enter para continuar con el programa.");
                     sc.nextLine();
                 }
 
-                case 4 ->  {
+                case 4 -> {
 
                     if (OrderExcecute) {
                         GroupedReport.Grouped(pets);
                     } else {
-                        System.out.println("Para continuar, primero debe completar el registro");
+                        System.out.println("Para continuar, primero debe completar el registro.");
                     }
-                    System.out.println("Presione la tecla Enter para continuar con el programa");
+                    System.out.println("\n");
+                    System.out.println("Presione la tecla Enter para continuar con el programa.");
                     sc.nextLine();
                 }
 
-                case 5 ->  {
+                case 5 -> {
 
                     if (OrderExcecute) {
                         MatchFound.Coincidences(pets);
                     } else {
-                        System.out.println("Para continuar, primero debe completar el registro");
+                        System.out.println("Para continuar, primero debe completar el registro.");
                     }
-                    System.out.println("Presione la tecla Enter para continuar con el programa");
+                    System.out.println("\n");
+                    System.out.println("Presione la tecla Enter para continuar con el programa.");
                     sc.nextLine();
                 }
 
-                case 6 ->  {
+                case 6 -> {
 
                     if (OrderExcecute) {
                         UpdateReport.Update(pets);
                     } else {
-                        System.out.println("Para continuar, primero debe completar el registro");
+                        System.out.println("Para continuar, primero debe completar el registro.");
                     }
-                    System.out.println("Presione la tecla Enter para continuar con el programa");
+                    System.out.println("\n");
+                    System.out.println("Presione la tecla Enter para continuar con el programa.");
                     sc.nextLine();
                 }
 
-                case 7 ->  {
+                case 7 -> {
                     System.out.println("Le agradecemos su aporte.");
-                    System.out.println("Presione la tecla Enter para continuar con el programa");
+                    System.out.println("Presione la tecla Enter para continuar con el programa.");
                     sc.nextLine();
                 }
                 default -> {
-                    System.out.println(" Opción inválida, por favor vuelva a intentarlo. ");
+                    System.out.println("Opción inválida, por favor vuelva a intentarlo.");
                 }
-
             }
         } while (option != 7);
 
     }
 }
-

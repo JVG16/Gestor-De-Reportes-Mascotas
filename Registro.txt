@@ -1,2 +1,0 @@
- ID Reporte:REP-0001 ID reportante:1-1919-0417 Tipo de Reporte:ENC Zona:SANTA AMA Especie:DOG Color:VERDE Señales Particulares:AAAAAAAAAAAAA Teléfono:2323-2323
- ID Reporte:REP-0001 ID reportante:1-1919-0417 Tipo de Reporte:PDR Zona:SAN JOSÉ Especie:CAT Color:AMARILLO Señales Particulares:AAAAAAAAAAAAA Teléfono:2232-2323

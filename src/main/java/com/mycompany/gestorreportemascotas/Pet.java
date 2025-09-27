@@ -1,4 +1,12 @@
 /*
+
+Descripción:
+
+En esta clase, se declaran los atributos. Es un paso muy importante ya que esos 
+atributos serán claves en todo el proceso del registro. En la misma, se realizarán
+las respectivas validaciones.
+
+
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
@@ -15,6 +23,8 @@ import java.util.Scanner;
  * @author Jimena
  */
 public class Pet {
+    
+    // Declaración de atributos.
 
     private String IdentificationReport;
     private String IdentificationReporter;
@@ -28,27 +38,16 @@ public class Pet {
     private String TelephoneNumber;
     private String Microchip;
 
-    // Constructores.
-    public Pet(String IdentificationReport, String IdentificationReporter, String FullName, String TypeReport, String ReportDate, String Zone, String Species, String Color, String ParticularSigns, String TelephoneNumber, String Microchip) {
-        this.IdentificationReport = IdentificationReport;
-        this.IdentificationReporter = IdentificationReporter;
-        this.FullName = FullName;
-        this.TypeReport = TypeReport;
-        this.ReportDate = ReportDate;
-        this.Zone = Zone;
-        this.Species = Species;
-        this.Color = Color;
-        this.ParticularSigns = ParticularSigns;
-        this.TelephoneNumber = TelephoneNumber;
-        this.Microchip = Microchip;
-    }
-
+    
+    
     public Pet() {
 
+        // Constructores.
+        
         this.IdentificationReport = "";
         this.IdentificationReporter = "";
         this.FullName = "";
-        this.TypeReport = "PDR";
+        this.TypeReport = "PDR"; // A diferencia de los demás, este por defecto debe ser PDR.
         this.ReportDate = "";
         this.Zone = "";
         this.Species = "";
@@ -60,6 +59,7 @@ public class Pet {
     }
 
     // Getters y Setters.
+    
     public String getIdentificationReport() {
         return IdentificationReport;
     }
@@ -148,8 +148,11 @@ public class Pet {
         this.Microchip = Microchip;
     }
 
-    // Validaciones ID del Reporte.
-    public void IdentReport(List<Pet> pets ) {
+    // Métodos.
+    
+    // Validaciones para el ID de Reporte.
+     
+    public void IdentReport(List<Pet> pets) {
 
         System.out.println("\n");
         System.out.println("--------------------------------------------------");
@@ -166,19 +169,19 @@ public class Pet {
             this.IdentificationReport = sc.nextLine().trim().toUpperCase();
 
             if (IdentificationReport.length() != 8) {
-                System.out.println("La cantidad esperada de carácteres en total es de 8. Por favor, vuelva a intentarlo.");
+                System.out.println("Formato inválido. Por favor, vuelva a intentarlo.");
                 One = false;
             } else if (!IdentificationReport.startsWith("REP-")) {
                 System.out.println("Se incluir primero el prefijo (REP-). Por favor, vuelva a intentarlo. ");
                 One = false;
             } else if (!IdentificationReport.substring(4).matches("\\d{4}")) {
-                System.out.println("No puede ingresar carácteres");
+                System.out.println("No puede ingresar carácteres posterior al prefijo (REP-). Por favor, vuelva a intentarlo.");
                 One = false;
             }
-            
-            for(Pet p: pets){
-                if(p.getIdentificationReport().equals(this.IdentificationReport)){
-                    System.out.println("El ID de reporte debe ser único");
+
+            for (Pet p : pets) {
+                if (p.getIdentificationReport().equals(this.IdentificationReport)) {
+                    System.out.println("El ID de reporte debe ser único. Por favor, ingrese uno nuevo. ");
                     One = false;
                 }
             }
@@ -186,6 +189,7 @@ public class Pet {
     }
 
     // Validaciones para el ID del Reportante.
+    
     public void IdentReporter() {
         Scanner sc = new Scanner(System.in);
         boolean Two;
@@ -194,20 +198,20 @@ public class Pet {
 
             Two = true;
             System.out.print("Ingrese ID del reportante (1-1111-1111):");
-            this.IdentificationReporter = sc.nextLine().trim().toUpperCase();
+            this.IdentificationReporter = sc.nextLine().trim();
 
             if (IdentificationReporter.isEmpty()) {
-                System.out.println("No puede dejar en blanco el número de cédula");
+                System.out.println("No puede dejar en vacío el número de cédula. Por favor, intente de nuevo.");
                 Two = false;
             }
 
             if (IdentificationReporter.length() != 11) {
-                System.out.println("La cantidad esperada de carácteres en total es de 11. Por favor, vuelva a intentarlo.");
+                System.out.println("Formato inválido. Por favor, vuelva a intentarlo.");
                 Two = false;
             }
 
             if (!IdentificationReporter.matches("\\d-\\d{4}-\\d{4}")) {
-                System.out.println("La cédula debe contener únicamente números, no carácteres.");
+                System.out.println("La cédula debe de contener únicamente números, no carácteres.Por favor, vuelva a intentarlo.");
                 Two = false;
             }
 
@@ -216,6 +220,7 @@ public class Pet {
     }
 
     // Validaciones para el Nombre.
+    
     public void Name() {
         Scanner sc = new Scanner(System.in);
         boolean Three;
@@ -224,40 +229,45 @@ public class Pet {
 
             Three = true;
             System.out.print("Ingrese el nombre completo:");
-            this.FullName = sc.nextLine().trim().toUpperCase();
+            this.FullName = sc.nextLine().trim();
 
             if (FullName.isEmpty()) {
-                System.out.println("No puede dejar en blanco el nombre completo");
+                System.out.println("No puede dejar vacío el nombre completo. Por favor, complete el espacio.");
                 Three = false;
             }
 
             if (FullName.length() >= 7) {
                 Three = true;
             } else {
-                System.out.println("El nombre debe contener como mínimo 7 carácteres");
+                System.out.println("El nombre debe de contener como mínimo 7 carácteres. Por favor, vuelva a intentarlo.");
                 Three = false;
             }
-
+            boolean Numbers = false;
             for (int i = 0; i < FullName.length(); i++) {
                 char c = FullName.charAt(i);
                 if (Character.isDigit(c)) {
-                    System.out.println("El nombre no debe contener números.");
-                    Three = false;
+                    Numbers = true;
+                    break;
                 }
             }
-
+            if (Numbers) {
+                System.out.println("El nombre no debe contener números, solo carácteres.Por favor, vuelba a intentarlo.");
+                Three = false;
+            }
         } while (!Three);
 
     }
 
     // Tipo de Reporte.
+    
     public void Report() {
         Scanner sc = new Scanner(System.in);
         this.TypeReport = "PDR";
         System.out.println("Ingrese el tipo de reporte (PDR/ENC)[Por defecto PDR]:" + this.TypeReport);
     }
 
-    // Validaciones por el tipo de Reporte
+    // Validaciones por el tipo de Reporte.
+    
     public void ModifyReport() {
         Scanner sc = new Scanner(System.in);
         boolean Four;
@@ -270,11 +280,11 @@ public class Pet {
                 this.TypeReport = Modify;
                 Four = true;
             } else {
-                System.out.println("Solo puede ingresar una de esas dos opciones");
+                System.out.println("Solo puede ingresar una de esas dos opciones.");
                 Four = false;
             }
             if (Modify.isEmpty()) {
-                System.out.println("No puede dejar el campo vacío");
+                System.out.println("No puede dejar el campo vacío. Por favor, intente de nuevo.");
                 Four = false;
             }
         } while (!Four);
@@ -282,6 +292,7 @@ public class Pet {
     }
 
     // Validaciones para la Fecha.
+    
     public void Date() {
         Scanner sc = new Scanner(System.in);
         boolean Five = true;
@@ -309,6 +320,7 @@ public class Pet {
     }
 
     // Validaciones para la Zona.
+    
     public void Place() {
         Scanner sc = new Scanner(System.in);
         boolean Six;
@@ -317,12 +329,12 @@ public class Pet {
 
             Six = true;
             System.out.print("Ingrese la zona:");
-            this.Zone = sc.nextLine().trim().toUpperCase();
+            this.Zone = sc.nextLine().trim();
 
             if (Zone.length() <= 30) {
                 Six = true;
             } else {
-                System.out.println("El texto debe contener como máximo 30 carácteres");
+                System.out.println("El texto debe contener como máximo 30 carácteres. Por favor, vuelva a intentarlo.");
                 Six = false;
             }
 
@@ -332,7 +344,7 @@ public class Pet {
             }
 
             if (Zone.isEmpty()) {
-                System.out.println("No puede dejar en blanco la zona");
+                System.out.println("No puede dejar vacío la zona. Por favor, complete el espacio.");
                 Six = false;
             }
 
@@ -341,6 +353,7 @@ public class Pet {
     }
 
     // Validaciones tipo de Especie.
+    
     public void Animal() {
         Scanner sc = new Scanner(System.in);
         boolean Seven;
@@ -358,7 +371,7 @@ public class Pet {
             }
 
             if (Species.isEmpty()) {
-                System.out.println("No puede dejar en blanco el tipo de especie");
+                System.out.println("No puede dejar vacío el tipo de especie. Por favor, intente de nuevo.");
                 Seven = false;
             }
 
@@ -367,6 +380,7 @@ public class Pet {
     }
 
     // Validaciones por el Color.
+    
     public void Aspect() {
         Scanner sc = new Scanner(System.in);
         boolean Eight;
@@ -374,21 +388,27 @@ public class Pet {
 
             Eight = true;
             System.out.print("Ingrese color principal:");
-            this.Color = sc.nextLine().trim().toUpperCase();
+            this.Color = sc.nextLine().trim();
 
             if (Color.isEmpty()) {
-                System.out.println("No puede dejar vacío el color");
+                System.out.println("No puede dejar vacío el color. Por favor, complete el espacio.");
                 Eight = false;
             }
 
+            boolean Characters = false;
             for (int i = 0; i < Color.length(); i++) {
                 char Letter = Color.charAt(i);
                 if (Character.isDigit(Letter)) {
-                    System.out.println("El color no debería de presentar números");
-                    Eight = false;
+                    Characters = true;
                     break;
+
                 }
 
+            }
+
+            if (Characters) {
+                System.out.println("El color no debería de presentar números. Por favor, vuelva a intentarlo.");
+                Eight = false;
             }
 
         } while (!Eight);
@@ -396,6 +416,7 @@ public class Pet {
     }
 
     // Validaciones de las Señas.
+    
     public void Signs() {
         Scanner sc = new Scanner(System.in);
         boolean Nine;
@@ -403,22 +424,22 @@ public class Pet {
         do {
             Nine = true;
             System.out.print("Ingrese señas particulares (mínimo 10 carácteres):");
-            this.ParticularSigns = sc.nextLine().trim().toUpperCase();
+            this.ParticularSigns = sc.nextLine().trim();
 
             if (ParticularSigns.length() >= 10) {
                 Nine = true;
             } else {
-                System.out.println("Debe tener mínimo 10 carácteres");
+                System.out.println("Debe tener mínimo 10 carácteres. Por favor, vuelva a intentarlo.");
                 Nine = false;
             }
 
             if (ParticularSigns.isEmpty()) {
-                System.out.println("No puede dejar en blanco las señas particulares de la mascota");
+                System.out.println("No puede dejar vacío las señas particulares de la mascota. Por favor, intente de nuevo.");
                 Nine = false;
             }
 
             if (ParticularSigns.matches("\\d+")) {
-                System.out.println("Las señas no pueden tener solo números");
+                System.out.println("Las señas no pueden tener solo números. Por favor, vuelva a intentarlo.");
                 Nine = false;
             }
 
@@ -427,6 +448,7 @@ public class Pet {
     }
 
     // Validaciones Teléfono.
+    
     public void Phone() {
         Scanner sc = new Scanner(System.in);
         boolean Ten;
@@ -435,20 +457,20 @@ public class Pet {
 
             Ten = true;
             System.out.print("Ingrese teléfono de contacto (####-####):");
-            this.TelephoneNumber = sc.nextLine().trim().toUpperCase();
+            this.TelephoneNumber = sc.nextLine().trim();
 
             if (TelephoneNumber.isEmpty()) {
-                System.out.println("No puede dejar el campo vacío");
+                System.out.println("No puede dejar el campo vacío. Por favor, complete el espacio.");
                 Ten = false;
             }
 
             if (TelephoneNumber.length() != 9) {
-                System.out.println(" La longuitud debe ser de 9 incluyendo el guión");
+                System.out.println(" Formato inválido. Por favor, vuelva a intentarlo.");
                 Ten = false;
             }
 
             if (!TelephoneNumber.matches("\\d{4}-\\d{4}")) {
-                System.out.println("El número de teléfono no puede contener carácteres. Por favor, vuelva a intentarlo.");
+                System.out.println("El número de teléfono no puede contener carácteres a excepción del guión (-). Por favor, vuelva a intentarlo.");
                 Ten = false;
             }
 
@@ -464,7 +486,7 @@ public class Pet {
 
             Eleven = true;
             System.out.print("Ingrese microchip (opcional, deje en blanco si no tiene): ");
-            this.Microchip = sc.nextLine().trim().toUpperCase();
+            this.Microchip = sc.nextLine().trim();
 
         } while (!Eleven);
 
