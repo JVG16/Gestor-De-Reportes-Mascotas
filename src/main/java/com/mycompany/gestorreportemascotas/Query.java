@@ -107,13 +107,13 @@ public class Query {
 
                     System.out.println("\n");
                     System.out.println(" Resultados encontrados:");
-                    System.out.printf("  %-11s   |    %-15s    |    %-6s    |   %-6s    |    %-4s%n   ",
+                    System.out.printf("  %-11s   |  %-15s  |  %-6s  | %-6s  |  %-4s%n   ",
                             "ID Reportante", "Nombre Completo", "Fecha", "Zona", "Tipo");
                     System.out.println(" ------------------------------------------------------------ ");
                 }
 
                 found = true;
-                System.out.printf("%-11s | %-18s | %-10s | %-10s | %-3s%n",
+                System.out.printf("  %-11s | %-18s | %-10s | %-10s | %-3s%n",
                         p.getIdentificationReporter(), p.getFullName(), p.getReportDate(),
                         p.getZone(), p.getTypeReport());
             }
