@@ -2,9 +2,8 @@
 
 Descripción:
 
-En esta clase, se declaran los atributos. Es un paso muy importante ya que esos 
-atributos serán claves en todo el proceso del registro. En la misma, se realizarán
-las respectivas validaciones.
+En esta clase, se declaran los atributos, los getters y setters. Es un paso muy
+importante ya que esos atributos serán claves durante todo el proceso del registro.
 
 
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -12,20 +11,13 @@ las respectivas validaciones.
  */
 package com.mycompany.gestorreportemascotas;
 
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
-import java.time.format.DateTimeParseException;
-import java.util.List;
-import java.util.Scanner;
-
 /**
  *
  * @author Jimena
  */
 public class Pet {
-    
-    // Declaración de atributos.
 
+    // Declaración de atributos.
     private String IdentificationReport;
     private String IdentificationReporter;
     private String FullName;
@@ -38,12 +30,9 @@ public class Pet {
     private String TelephoneNumber;
     private String Microchip;
 
-    
-    
     public Pet() {
 
         // Constructores.
-        
         this.IdentificationReport = "";
         this.IdentificationReporter = "";
         this.FullName = "";
@@ -59,7 +48,6 @@ public class Pet {
     }
 
     // Getters y Setters.
-    
     public String getIdentificationReport() {
         return IdentificationReport;
     }

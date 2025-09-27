@@ -92,22 +92,22 @@ public class Query {
 
         boolean found = false;
         for (Pet p : pets) {
-            boolean match = false;
+            boolean Match = false;
 
             if (Selection == 1 && p.getIdentificationReporter().equals(Word)) {
-                match = true;
+                Match = true;
             } else if (Selection == 2 && p.getSpecies().toUpperCase().equals(Word)) {
-                match = true;
+                Match = true;
             } else if (Selection == 3 && p.getZone().equals(Word)) {
-                match = true;
+                Match = true;
             }
 
-            if (match) {
+            if (Match) {
                 if (!found) {
 
                     System.out.println("\n");
                     System.out.println(" Resultados encontrados:");
-                    System.out.printf("  %-11s   |  %-15s  |  %-6s  | %-6s  |  %-4s%n   ",
+                    System.out.printf("  %-11s   |  %-15s  |  %-6s  | %-6s | %-4s%n   ",
                             "ID Reportante", "Nombre Completo", "Fecha", "Zona", "Tipo");
                     System.out.println(" ------------------------------------------------------------ ");
                 }

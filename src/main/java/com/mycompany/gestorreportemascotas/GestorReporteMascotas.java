@@ -31,7 +31,6 @@ Página web: https://www-javahandbook-com.translate.goog/java-strings/string-for
 package com.mycompany.gestorreportemascotas;
 
 // Librerías necesarias para el desarrollo óptimo del programa.
-
 import java.io.PrintStream;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
@@ -51,21 +50,31 @@ public class GestorReporteMascotas {
         Scanner sc = new Scanner(System.in);
         Menu menu = new Menu();
         int option;
+        option = 0;
         boolean OrderExcecute = false; // Permite el orden de ejecución del programa.
 
         List<Pet> pets = new ArrayList<>(); // 
 
         do {
             menu.SeeMenu(); // Muestra el menú.
-            option = menu.leerOption();
-
+            boolean Validate = false;
+            while(!Validate){
+                try{
+                   System.out.print("Seleccione una opción:");
+                   option = Integer.parseInt(sc.nextLine());
+                   Validate = true;
+                }catch(NumberFormatException e){
+                    System.out.println("No debe ingresar letras. Por favor, vuelva a digitar una opción");
+                }
+            }
+             
             // Manejo de las opciones.
             switch (option) {
 
                 case 1 -> {
 
                     Pet AA = new Pet();
-                    
+
                     AA.setIdentificationReport(Validation.IdentReport(pets));
                     AA.setIdentificationReporter(Validation.IdentReporter());
                     AA.setFullName(Validation.Name());
@@ -77,10 +86,10 @@ public class GestorReporteMascotas {
                     AA.setParticularSigns(Validation.Signs());
                     AA.setTelephoneNumber(Validation.Phone());
                     AA.setMicrochip(Validation.Micro());
-                    
+
                     pets.add(AA);
                     OrderExcecute = true;
-                    
+
                     System.out.println("Registro completado con éxito");
                     System.out.println("\n");
                     System.out.println("Presione la tecla Enter para continuar con el programa.");
