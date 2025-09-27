@@ -31,7 +31,6 @@ Página web: https://www-javahandbook-com.translate.goog/java-strings/string-for
 package com.mycompany.gestorreportemascotas;
 
 // Librerías necesarias para el desarrollo óptimo del programa.
-
 import java.io.PrintStream;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
@@ -57,7 +56,7 @@ public class GestorReporteMascotas {
 
         do {
             menu.SeeMenu(); // Muestra el menú.
-            option = menu.leerOption();
+              option = menu.leerOption();
 
             // Manejo de las opciones.
             switch (option) {
@@ -65,7 +64,7 @@ public class GestorReporteMascotas {
                 case 1 -> {
 
                     Pet AA = new Pet();
-                    
+
                     AA.setIdentificationReport(Validation.IdentReport(pets));
                     AA.setIdentificationReporter(Validation.IdentReporter());
                     AA.setFullName(Validation.Name());
@@ -77,10 +76,10 @@ public class GestorReporteMascotas {
                     AA.setParticularSigns(Validation.Signs());
                     AA.setTelephoneNumber(Validation.Phone());
                     AA.setMicrochip(Validation.Micro());
-                    
+
                     pets.add(AA);
                     OrderExcecute = true;
-                    
+
                     System.out.println("Registro completado con éxito");
                     System.out.println("\n");
                     System.out.println("Presione la tecla Enter para continuar con el programa.");

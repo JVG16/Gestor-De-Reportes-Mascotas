@@ -1,4 +1,12 @@
 /*
+
+Descripción:
+
+En la clase Pet, se declararon los atributos necesarios para dar continuidad
+al programa. Para un mejor control y orden, es necesario realizar las validaciones
+necesarias por cada campo o atributo. En caso de haber un error o no cumplir con 
+lo solicitado, el usuario deberá ingresar nuevamente el dato.
+
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
@@ -15,22 +23,19 @@ import java.util.Scanner;
  * @author Jimena
  */
 public class Validation {
-    Scanner sc = new Scanner(System.in);
-   
+
     // Métodos.
-    
     // Validaciones para el ID de Reporte.
-     
-    public static String IdentReport (List<Pet> pets) {
+    
+    public static String IdentReport(List<Pet> pets) {
         Scanner sc = new Scanner(System.in);
-        
 
         System.out.println("\n");
         System.out.println("--------------------------------------------------");
         System.out.println("             REGISTRAR NUEVO REPORTE              ");
         System.out.println("--------------------------------------------------");
 
-        String IdReport ;
+        String IdReport;
         boolean One;
 
         do {
@@ -61,7 +66,6 @@ public class Validation {
     }
 
     // Validaciones para el ID del Reportante.
-    
     public static String IdentReporter() {
         Scanner sc = new Scanner(System.in);
         String IdReporter;
@@ -93,7 +97,6 @@ public class Validation {
     }
 
     // Validaciones para el Nombre.
-    
     public static String Name() {
         Scanner sc = new Scanner(System.in);
         String Name;
@@ -129,13 +132,12 @@ public class Validation {
                 Three = false;
             }
         } while (!Three);
-        
+
         return Name;
 
     }
 
     // Tipo de Reporte.
-    
     public static String Report() {
         Scanner sc = new Scanner(System.in);
         String TypeReport = "PDR";
@@ -144,7 +146,6 @@ public class Validation {
     }
 
     // Validaciones por el tipo de Reporte.
-    
     public static String ModifyReport() {
         Scanner sc = new Scanner(System.in);
         String TypeReport;
@@ -167,13 +168,12 @@ public class Validation {
                 Four = false;
             }
         } while (!Four);
-        
+
         return Modify;
 
     }
 
     // Validaciones para la Fecha.
-    
     public static String Date() {
         Scanner sc = new Scanner(System.in);
         String RepDate;
@@ -198,13 +198,12 @@ public class Validation {
             }
 
         } while (!Five);
-        
+
         return RepDate;
 
     }
 
     // Validaciones para la Zona.
-    
     public static String Place() {
         Scanner sc = new Scanner(System.in);
         String Residence;
@@ -234,7 +233,7 @@ public class Validation {
             }
 
         } while (!Six);
-        
+
         return Residence;
     }
 
@@ -263,7 +262,7 @@ public class Validation {
             }
 
         } while (!Seven);
-        
+
         return Specie;
 
     }
@@ -300,7 +299,7 @@ public class Validation {
             }
 
         } while (!Eight);
-        
+
         return Aparience;
 
     }
@@ -335,7 +334,7 @@ public class Validation {
             }
 
         } while (!Nine);
-        
+
         return PartSings;
 
     }
@@ -369,7 +368,7 @@ public class Validation {
             }
 
         } while (!Ten);
-        
+
         return Telephone;
 
     }
@@ -386,11 +385,9 @@ public class Validation {
             Chip = sc.nextLine().trim();
 
         } while (!Eleven);
-        
+
         return Chip;
 
     }
-    
+
 }
-
-

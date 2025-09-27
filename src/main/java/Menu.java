@@ -39,7 +39,7 @@ public class Menu {
     }
 
     public int leerOption() {
-        System.out.print(" Ingrese la opción: ");
+        System.out.print("Seleccione una opción:");
         return sc.nextInt();
     }
 }
