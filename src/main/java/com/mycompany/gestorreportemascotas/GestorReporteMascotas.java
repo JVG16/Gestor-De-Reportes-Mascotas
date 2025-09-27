@@ -50,14 +50,24 @@ public class GestorReporteMascotas {
         Scanner sc = new Scanner(System.in);
         Menu menu = new Menu();
         int option;
+        option = 0;
         boolean OrderExcecute = false; // Permite el orden de ejecución del programa.
 
         List<Pet> pets = new ArrayList<>(); // 
 
         do {
             menu.SeeMenu(); // Muestra el menú.
-              option = menu.leerOption();
-
+            boolean Validate = false;
+            while(!Validate){
+                try{
+                   System.out.print("Seleccione una opción:");
+                   option = Integer.parseInt(sc.nextLine());
+                   Validate = true;
+                }catch(NumberFormatException e){
+                    System.out.println("No debe ingresar letras. Por favor, vuelva a digitar una opción");
+                }
+            }
+             
             // Manejo de las opciones.
             switch (option) {
 

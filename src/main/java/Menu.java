@@ -37,9 +37,4 @@ public class Menu {
         System.out.println(" 6. Actualizar reporte ");
         System.out.println(" 7. Salir ");
     }
-
-    public int leerOption() {
-        System.out.print("Seleccione una opción:");
-        return sc.nextInt();
-    }
 }
