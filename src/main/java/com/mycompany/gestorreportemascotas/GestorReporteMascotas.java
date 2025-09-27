@@ -35,6 +35,7 @@ package com.mycompany.gestorreportemascotas;
 import java.io.PrintStream;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Scanner;
 
@@ -64,18 +65,19 @@ public class GestorReporteMascotas {
                 case 1 -> {
 
                     Pet AA = new Pet();
-                    AA.IdentReport(pets);
-                    AA.IdentReporter();
-                    AA.Name();
-                    AA.Report();
-                    AA.Date();
-                    AA.Place();
-                    AA.Animal();
-                    AA.Aspect();
-                    AA.Signs();
-                    AA.Phone();
-                    AA.Micro();
-
+                    
+                    AA.setIdentificationReport(Validation.IdentReport(pets));
+                    AA.setIdentificationReporter(Validation.IdentReporter());
+                    AA.setFullName(Validation.Name());
+                    AA.setTypeReport(Validation.Report());
+                    AA.setReportDate(Validation.Date());
+                    AA.setZone(Validation.Place());
+                    AA.setSpecies(Validation.Animal());
+                    AA.setColor(Validation.Aspect());
+                    AA.setParticularSigns(Validation.Signs());
+                    AA.setTelephoneNumber(Validation.Phone());
+                    AA.setMicrochip(Validation.Micro());
+                    
                     pets.add(AA);
                     OrderExcecute = true;
                     
@@ -148,6 +150,7 @@ public class GestorReporteMascotas {
 
                 case 7 -> {
                     System.out.println("Le agradecemos su aporte.");
+                    System.out.println("\n");
                     System.out.println("Presione la tecla Enter para continuar con el programa.");
                     sc.nextLine();
                 }
