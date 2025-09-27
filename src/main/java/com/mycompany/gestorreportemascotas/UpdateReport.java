@@ -96,7 +96,7 @@ public class UpdateReport {
                     }
 
                     case 2 -> {
-                        found.ModifyReport();
+                        found.setTypeReport(Validation.ModifyReport());
                         System.out.println("\n");
                         System.out.println("------------------------------------------------------------------------");
                         System.out.println("Edición Exitosa: Tipo de reporte actualizado a:" + found.getTypeReport());
@@ -157,13 +157,13 @@ public class UpdateReport {
             case 2 -> {
                 System.out.println("Reingresar todos los datos");
                 System.out.println("\n");
-                found.Name();
-                found.ModifyReport();
-                found.Place();
-                found.Animal();
-                found.Aspect();
-                found.Signs();
-                found.Phone();
+                found.setFullName(Validation.Name());
+                found.setTypeReport(Validation.ModifyReport());
+                found.setZone(Validation.Place());
+                found.setSpecies(Validation.Animal());
+                found.setColor(Validation.Aspect());
+                found.setParticularSigns(Validation.Signs());
+                found.setTelephoneNumber(Validation.Phone());
             }
             default ->
                 System.out.println("Opción inválida");
