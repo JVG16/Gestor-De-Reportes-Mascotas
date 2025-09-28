@@ -25,6 +25,7 @@ Canal de YouTube: https://www.youtube.com/watch?v=TDc2u-3EP3Q&ab_channel=%D0%A4%
 Página web: https://www.ibm.com/docs/es/i/7.4.0?topic=java-code-examples
 Página web: https://www.ionos.com/es-us/digitalguide/paginas-web/desarrollo-web/java-variables/ 
 Página web: https://www-javahandbook-com.translate.goog/java-strings/string-formatting-in-java-s-d-f/?_x_tr_sl=en&_x_tr_tl=es&_x_tr_hl=es&_x_tr_pto=rq
+Páhina web: https://www.w3schools.com/java/java_try_catch.asp
 
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  */
@@ -34,7 +35,6 @@ package com.mycompany.gestorreportemascotas;
 import java.io.PrintStream;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Scanner;
 
@@ -53,23 +53,22 @@ public class GestorReporteMascotas {
         option = 0;
         boolean OrderExcecute = false; // Permite el orden de ejecución del programa.
 
-        List<Pet> pets = new ArrayList<>(); // 
+        List<Pet> pets = new ArrayList<>(); // Lista llamada Pet. Es importante ya que ésta almacena todos los registros.
 
         do {
             menu.SeeMenu(); // Muestra el menú.
             boolean Validate = false;
-            while(!Validate){
-                try{
-                   System.out.print("Seleccione una opción:");
-                   option = Integer.parseInt(sc.nextLine());
-                   Validate = true;
-                }catch(NumberFormatException e){
+            while (!Validate) {
+                try {
+                    System.out.print("Seleccione una opción:");
+                    option = Integer.parseInt(sc.nextLine());
+                    Validate = true;
+                } catch (NumberFormatException e) {
                     System.out.println("No debe ingresar letras. Por favor, vuelva a digitar una opción");
                 }
             }
-             
-            // Manejo de las opciones.
-            switch (option) {
+
+            switch (option) { // Manejo de las opciones.
 
                 case 1 -> {
 

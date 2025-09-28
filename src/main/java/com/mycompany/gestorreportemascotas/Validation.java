@@ -7,14 +7,19 @@ al programa. Para un mejor control y orden, es necesario realizar las validacion
 necesarias por cada campo o atributo. En caso de haber un error o no cumplir con 
 lo solicitado, el usuario deberá ingresar nuevamente el dato.
 
+-ToUpperCase() = Transforma un texto de minúscula a mayúscula.
+- Trim() = Elimina espacios al inicio o final de un texto.
+-sc.nextLine()= Toma toda la línea de texto ingresada por el usuario, incluyendo si hay espacios entre palabras.
+-Boolean = Es un dato lógico.
+
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package com.mycompany.gestorreportemascotas;
 
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
-import java.time.format.DateTimeParseException;
+import java.time.format.DateTimeFormatter; // Librería para el manejo de la fecha.
+import java.time.format.DateTimeParseException; // Librería importante para poder utilizar el try Catch en el método de la fecha.
 import java.util.List;
 import java.util.Scanner;
 
@@ -26,7 +31,6 @@ public class Validation {
 
     // Métodos.
     // Validaciones para el ID de Reporte.
-    
     public static String IdentReport(List<Pet> pets) {
         Scanner sc = new Scanner(System.in);
 
@@ -48,7 +52,7 @@ public class Validation {
                 System.out.println("Formato inválido. Por favor, vuelva a intentarlo.");
                 One = false;
             } else if (!IdReport.startsWith("REP-")) {
-                System.out.println("Se incluir primero el prefijo (REP-). Por favor, vuelva a intentarlo. ");
+                System.out.println("Se incluir primero el prefijo (REP-).Por favor, vuelva a intentarlo. ");
                 One = false;
             } else if (!IdReport.substring(4).matches("\\d{4}")) {
                 System.out.println("No puede ingresar carácteres posterior al prefijo (REP-). Por favor, vuelva a intentarlo.");
@@ -57,7 +61,7 @@ public class Validation {
 
             for (Pet p : pets) {
                 if (p.getIdentificationReport().equals(IdReport)) {
-                    System.out.println("El ID de reporte debe ser único. Por favor, ingrese uno nuevo. ");
+                    System.out.println("El ID de reporte debe ser único.Por favor, ingrese uno nuevo. ");
                     One = false;
                 }
             }
@@ -83,7 +87,7 @@ public class Validation {
             }
 
             if (IdReporter.length() != 11) {
-                System.out.println("Formato inválido. Por favor, vuelva a intentarlo.");
+                System.out.println("Formato inválido.Por favor, vuelva a intentarlo.");
                 Two = false;
             }
 
@@ -238,7 +242,6 @@ public class Validation {
     }
 
     // Validaciones tipo de Especie.
-    
     public static String Animal() {
         Scanner sc = new Scanner(System.in);
         String Specie;
@@ -268,7 +271,6 @@ public class Validation {
     }
 
     // Validaciones por el Color.
-    
     public static String Aspect() {
         Scanner sc = new Scanner(System.in);
         String Aparience;
@@ -305,7 +307,6 @@ public class Validation {
     }
 
     // Validaciones de las Señas.
-    
     public static String Signs() {
         Scanner sc = new Scanner(System.in);
         String PartSings;
@@ -340,7 +341,6 @@ public class Validation {
     }
 
     // Validaciones Teléfono.
-    
     public static String Phone() {
         Scanner sc = new Scanner(System.in);
         String Telephone;
@@ -353,7 +353,7 @@ public class Validation {
             Telephone = sc.nextLine().trim();
 
             if (Telephone.isEmpty()) {
-                System.out.println("No puede dejar el campo vacío. Por favor, complete el espacio.");
+                System.out.println("No puede dejar el campo vacío.Por favor, complete el espacio.");
                 Ten = false;
             }
 

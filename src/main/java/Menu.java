@@ -3,10 +3,8 @@
 
 Descripción: 
 
-En esta clase se declara el menú con sus múltiples opciones. El usuario deberá
-ingresar los datos solicitados. En dado caso de que el usuario digite una opción 
-que no esté incluida en el menú, el programa deberá mostrar un mensaje en 
-pantalla de error.
+En esta clase se declara el menú con sus múltiples opciones. Es la base ya que
+cada vez que el usuario complete una de las opciones, el menú volverá a aparecer.
 
  */
 

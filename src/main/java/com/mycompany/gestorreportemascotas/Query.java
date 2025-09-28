@@ -8,18 +8,15 @@ opción diferente a las determinadas, se deberá mostrar en pantalla un mensaje 
 error. Se deberá mostrar en pantalla un reporte en caso de que el criterio de 
 búsqueda seleecionado y su respectivo formato sea el correcto.
 
-Implementaciones relevantes:
-
-Try Catch con el fin de no permitir el ingreso de carácteres dentro de la selección
+-Try Catch con el fin de no permitir el ingreso de carácteres dentro de la selección
 del criterio de búsqueda.
-El ciclo For recorre los valores para mostrarlos en pantalla.
 
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package com.mycompany.gestorreportemascotas;
 
-import java.util.InputMismatchException;
+import java.util.InputMismatchException; // Librería para utilizar de manera exitosa el try catch.
 import java.util.List;
 import java.util.Scanner;
 
@@ -36,7 +33,7 @@ public class Query {
 
         do {
 
-            System.out.println("\n");
+            System.out.println("\n"); // Salto de línea.
             System.out.println(" -------------------------------------------------------------------------- ");
             System.out.println("                       CONSULTA DE REPORTES POR CRITERIOS                   ");
             System.out.println(" -------------------------------------------------------------------------- ");
@@ -107,13 +104,13 @@ public class Query {
 
                     System.out.println("\n");
                     System.out.println(" Resultados encontrados:");
-                    System.out.printf("  %-11s   |  %-15s  |  %-6s  | %-6s | %-4s%n   ",
+                    System.out.printf("  %-11s   |  %-15s  |  %-6s  | %-6s | %-4s%n  ", // %s define el ancho por cada campo.
                             "ID Reportante", "Nombre Completo", "Fecha", "Zona", "Tipo");
                     System.out.println(" ------------------------------------------------------------ ");
                 }
 
                 found = true;
-                System.out.printf("  %-11s | %-18s | %-10s | %-10s | %-3s%n",
+                System.out.printf(" %-11s | %-18s | %-10s | %-10s | %-3s%n",
                         p.getIdentificationReporter(), p.getFullName(), p.getReportDate(),
                         p.getZone(), p.getTypeReport());
             }

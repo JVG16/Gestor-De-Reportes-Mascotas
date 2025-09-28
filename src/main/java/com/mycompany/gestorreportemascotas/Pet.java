@@ -5,6 +5,9 @@ Descripción:
 En esta clase, se declaran los atributos, los getters y setters. Es un paso muy
 importante ya que esos atributos serán claves durante todo el proceso del registro.
 
+-Declaración de los atributos.
+-La inicialización de cada uno de los atributos.
+-La implementación de los getters y setters.
 
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
@@ -17,7 +20,6 @@ package com.mycompany.gestorreportemascotas;
  */
 public class Pet {
 
-    // Declaración de atributos.
     private String IdentificationReport;
     private String IdentificationReporter;
     private String FullName;
@@ -32,7 +34,6 @@ public class Pet {
 
     public Pet() {
 
-        // Constructores.
         this.IdentificationReport = "";
         this.IdentificationReporter = "";
         this.FullName = "";

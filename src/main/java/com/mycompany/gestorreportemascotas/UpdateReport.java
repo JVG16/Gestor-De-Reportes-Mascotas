@@ -41,7 +41,7 @@ public class UpdateReport {
         }
 
         if (found == null) {
-            System.out.println("No se encontró un reporte con el ID");
+            System.out.println("El ID de reporte no existe.");
             return;
         }
 
@@ -92,14 +92,14 @@ public class UpdateReport {
                         found.setFullName(sc.nextLine());
                         System.out.println("\n");
                         System.out.println("----------------------------------------------------------------------");
-                        System.out.println("Edición Exitosa: Nombre completo actualizado a:" + found.getFullName());
+                        System.out.println("Edición Exitosa: Nombre completo actualizado a: " + found.getFullName());
                     }
 
                     case 2 -> {
                         found.setTypeReport(Validation.ModifyReport());
                         System.out.println("\n");
                         System.out.println("------------------------------------------------------------------------");
-                        System.out.println("Edición Exitosa: Tipo de reporte actualizado a:" + found.getTypeReport());
+                        System.out.println("Edición Exitosa: Tipo de reporte actualizado a: " + found.getTypeReport());
                     }
 
                     case 3 -> {
@@ -107,7 +107,7 @@ public class UpdateReport {
                         found.setZone(sc.nextLine());
                         System.out.println("\n");
                         System.out.println("-------------------------------------------------------");
-                        System.out.println("Edición Exitosa: Zona actualizada a:" + found.getZone());
+                        System.out.println("Edición Exitosa: Zona actualizada a: " + found.getZone());
                     }
 
                     case 4 -> {
@@ -115,7 +115,7 @@ public class UpdateReport {
                         found.setSpecies(sc.nextLine());
                         System.out.println("\n");
                         System.out.println("---------------------------------------------------------------------");
-                        System.out.println("Edición Exitosa: Eipo de esoecie actualizado a:" + found.getSpecies());
+                        System.out.println("Edición Exitosa: Eipo de esoecie actualizado a: " + found.getSpecies());
                     }
 
                     case 5 -> {
@@ -123,7 +123,7 @@ public class UpdateReport {
                         found.setColor(sc.nextLine());
                         System.out.println("\n");
                         System.out.println("---------------------------------------------------------");
-                        System.out.println("Edición Exitosa: Color actualizado a:" + found.getColor());
+                        System.out.println("Edición Exitosa: Color actualizado a: " + found.getColor());
                     }
 
                     case 6 -> {
@@ -131,7 +131,7 @@ public class UpdateReport {
                         found.setParticularSigns(sc.nextLine());
                         System.out.println("\n");
                         System.out.println("---------------------------------------------------------------------------------");
-                        System.out.println("Edición Exitosa: Señas particulares actualizadas a:" + found.getParticularSigns());
+                        System.out.println("Edición Exitosa: Señas particulares actualizadas a: " + found.getParticularSigns());
                     }
 
                     case 7 -> {
@@ -139,14 +139,14 @@ public class UpdateReport {
                         found.setTelephoneNumber(sc.nextLine());
                         System.out.println("\n");
                         System.out.println("--------------------------------------------------------------------------------");
-                        System.out.println("Edición Exitosa: Número de teléfono actualizado a:" + found.getTelephoneNumber());
+                        System.out.println("Edición Exitosa: Número de teléfono actualizado a: " + found.getTelephoneNumber());
                     }
 
                     case 8 -> {
                         System.out.print("Nuevo microchip");
                         System.out.println("\n");
                         System.out.println("-----------------------------------------------------------------");
-                        System.out.println("Edición Exitosa: Microchip actualizado a:" + found.getMicrochip());
+                        System.out.println("Edición Exitosa: Microchip actualizado a: " + found.getMicrochip());
                         found.setMicrochip(sc.nextLine());
                     }
 

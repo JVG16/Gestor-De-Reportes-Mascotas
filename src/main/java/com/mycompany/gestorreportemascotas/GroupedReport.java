@@ -21,7 +21,7 @@ public class GroupedReport {
 
     public static void Grouped(List<Pet> pets) {
 
-        System.out.println("\n");
+        System.out.println("\n"); // Salto de línea.
         System.out.println("---------------------------------------");
         System.out.println("       REPORTE AGRUPADO DE MASCOTAS    ");
         System.out.println("---------------------------------------");
